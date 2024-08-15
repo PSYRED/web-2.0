@@ -14,12 +14,13 @@ import { Footer2 } from "./components/Footer/Footer2.jsx";
 import Services from "./pages/Services.jsx";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
+import Footer3 from "./components/Footer/Footer3.jsx";
 const Layout = () => {
   return (
     <>
       <Nav />
       <Outlet />
-      <Footer2 />
+      <Footer3/>
     </>
   );
 };

@@ -19,8 +19,7 @@ const Nav = () => {
   }, []);
 
   const [ openModal, setOpenModal] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [handleBtn,setHandleBtn] = useState(false)
+   
   const handletoggle = () => { 
     setOpenModal(!openModal) 
       
@@ -83,7 +82,7 @@ const Nav = () => {
          <Link
               to={"contact"}>
         <div className="space-x-4 items-center lg:flex hidden">
-          <p className="px-4 py-2 bg-purple-400 text-white font-roboto  ">
+          <p className="px-4 py-2 border-white border border-2 text-white font-roboto  ">
             Contact us
           </p>
 
