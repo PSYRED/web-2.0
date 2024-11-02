@@ -7,10 +7,10 @@ import RoadRender from "../assets/RoadRender.png";
 import { FaRoad } from "react-icons/fa";
 
 import CardComponent from "./../components/Card/CardComponent";
-// import blu from "./../assets/Blu-logistics.png";
-// import fabpic from "./../assets/fabpic.png";
-// import pport from "./../assets/pport.png";
-// import Header from "../sections/OurServices/Header";
+ import blu from "./../assets/Blu-logistics.png";
+import fabpic from "./../assets/Blu-logistics.png";
+import pport from "./../assets/Blu-logistics.png";
+import Header from "../sections/OurServices/Header";
 
 
 const Gallery = () => {
