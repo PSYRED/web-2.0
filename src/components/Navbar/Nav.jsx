@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "../../assets/psyred_assets/official_logo.png";
 import { useState, useEffect } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
@@ -34,43 +34,43 @@ const Nav = () => {
       <nav
         className={
           isScrolled
-            ? `nav-scrolled flex  font-nunito  items-center p-2 w-full lg:fixed   text-white z-10  lg:px-[10rem] justify-between`
+            ? `nav-scrolled flex  font-nunito  items-center p-2 w-full lg:fixed   text-white z-10 lg:py-[4rem] bg-red-200  lg:px-[10rem] justify-between`
             : `flex   items-center p-2 w-full lg:fixed font-nunito  text-white z-10  lg:px-[10rem] justify-between`
         }
       >
         <Link to={"/"}>
-          <img src={logo} alt="" className="h-[8vh]    rounded-full" />
+          <img src={logo} alt="" className="h-[8vh]    " />
         </Link>
         <div className="lg:flex hidden  items-center space-x-4 justify-between   ">
           <ul className="flex font-roboto font-semibold space-x-4 ">
             <Link
               to={"/"}
-              className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Home
             </Link>
             <Link
               to={"about"}
-              className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               About
             </Link>
             <Link
               to={"services"}
-              className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Our Services
             </Link>
 
             <Link
               to={"careers"}
-              className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Careers
             </Link>
             <Link
               to={"gallery"}
-              className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Portfolio
             </Link>
