@@ -59,26 +59,26 @@ function App() {
         {!isLoading && (
           <div className=" justify-center flex h-[100vh] bg-purple-200">
             <RotatingLines
-              strokeColor="purple"
+              strokeColor="red"
               width="150"
               animationDuration="4s"
             />
           </div>
         )}
-        <div className="lg:h-[100vh] flex justify-center    ">
-          <div className="object-cover brightness-75  bg-red-300 w-full lg:h-[100vh] h-[60vh]">
+        <div className="lg:h-[100vh] flex justify-center     ">
+          <div className="object-cover brightness-75    w-full lg:h-[100vh] h-[50vh]">
             <img
               src={corpo4}
-              className="lg:h-[100vh] h-[60vh] lg:w-full object-cover object-right-bottom  "
+              className="lg:h-[100vh] h-[50vh] lg:w-full lg:object-cover lg:object-right-bottom object-cover object-center  "
               alt=""
               srcset=""
               onLoad={() => setIsLoading(true)}
             />
           </div>
 
-          <div className="md:flex justify-center   font-nunito lg:top-[25rem] items-center   top-10 fadeInDown text-white absolute lg:px-[5rem] px-[2rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
+          <div className="md:flex justify-center   font-nunito lg:top-[25rem] top-[8rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[2rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
             <div className=" flex-col items-center flex  space-y-[3rem]  lg:space-y-[2rem]   ">
-              <h1 className="font-semibold   pl-20 lg:text-4xl     text-3xl ">
+              <h1 className="font-bold text-center lg:text-4xl     text-3xl ">
                 Experience Ultimate Freedom With The
                 <span className=" text-red-400"> 3:0:0:0</span>
               </h1>
