@@ -34,7 +34,7 @@ const Nav = () => {
       <nav
         className={
           isScrolled
-            ? `nav-scrolled flex  font-nunito  items-center p-2 w-full lg:fixed   text-white z-10 lg:py-[4rem] bg-red-200  lg:px-[10rem] justify-between`
+            ? `nav-scrolled flex  font-nunito  items-center p-2 py-10 w-full lg:fixed   text-white z-10 lg:py-[4rem] bg-red-200  lg:px-[10rem] justify-between`
             : `flex   items-center p-2 w-full lg:fixed font-nunito  text-white z-10  lg:px-[10rem] justify-between`
         }
       >
@@ -74,19 +74,14 @@ const Nav = () => {
             >
               Portfolio
             </Link>
-           
-              
-          
           </ul>
         </div>
-         <Link
-              to={"contact"}>
-        <div className="space-x-4 items-center  lg:flex hidden">
-          <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
-            Join the waitlist
-          </p>
-
-        </div>
+        <Link to={"contact"}>
+          <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
+            <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
+              Join the waitlist
+            </p>
+          </div>
         </Link>
 
         <div className="lg:hidden text-4xl text-black " onClick={handletoggle}>
@@ -95,7 +90,7 @@ const Nav = () => {
 
         {/* navigation modal */}
 
-        {openModal && <Modal  handletoggle={handletoggle} />}
+        {openModal && <Modal handletoggle={handletoggle} />}
       </nav>
     </>
   );

@@ -6,34 +6,36 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [subject, setSubject] = useState("");
-  const [text, setText] = useState("");
-  const [isLoading, setIsLoading] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("")
+    const [isLoading, setIsLoading] = useState("");
 
+   
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
 
-    if (name && email && text && subject) {
+    if (fname && email && lname) {
       axios
-        .post("https://blu-channel-backend.onrender.com/send-email", {
+        .post("http://localhost:5000/subscribe", {
           email,
-          name,
-          subject,
-          text,
+          fname,
+          lname,
+        
         })
-        .then(() => {
-          toast.success("Email sent succesfully");
-          console.log("Email sent succesfully");
+        .then((res) => {
+          toast.success("Subscribe successfully");
+          console.log(res.data);
           setEmail("");
-          setName("");
-          setSubject("");
-          setText("");
-        })
-        .catch((error) => {
-          console.error("Error sending email", error);
+          setFname("");
+          setLname("")
+          setIsLoading(false)
+                   })
+        .catch((res) => {
+          console.log("Error sending email", res);
           toast.error("Error sending email");
+          setIsLoading(false);
+
         });
     } else return toast.error("Fill in the fields correctly");
   };
@@ -46,19 +48,31 @@ const Form = () => {
         <div className="lg:mt-4 top-1    lg:pb-12 bg-purple-100 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
           <form className="flex flex-col px-8  md:w-2/3 space-y-10   ">
             <h2 className="text-purple-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
-              Contact us 
+              Join the waitlist
             </h2>
 
             <input
               type="text"
-              placeholder="Name"
-              value={name}
+              placeholder="First Name"
+              value={fname}
               name=""
               id=""
               className=" rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
               required
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setFname(e.target.value)}
             />
+
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={lname}
+              name=""
+              id=""
+              className=" rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
+              required
+              onChange={(e) => setLname(e.target.value)}
+            />
+
             <input
               type="email"
               placeholder="Email"
@@ -67,22 +81,7 @@ const Form = () => {
               required
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              type="text"
-              placeholder="Subject"
-              value={subject}
-              className=" outline-none hover:border-purple-400 border-2  border-gray-400 rounded-lg px-3 py-1"
-              required
-              onChange={(e) => setSubject(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Message"
-              value={text}
-              className="border-gray-400  outline-none hover:border-purple-400   border-2 rounded-lg px-3 py-8"
-              required
-              onChange={(e) => setText(e.target.value)}
-            />
+
             <div className=" justify-center flex lg:justify-start">
               <button
                 onClick={(e) => handleSubmit(e)}
