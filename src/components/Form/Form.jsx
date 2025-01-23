@@ -84,7 +84,9 @@ const Form = () => {
 
             <div className=" justify-center flex lg:justify-start">
               <button
-                onClick={(e) => handleSubmit(e)}
+                onClick={(e) => handleSubmit(e)} 
+
+              
                 className="px-4 py-2 bg-purple-600 focus:bg-black rounded-md text-white font-semibold"
               >
                 {isLoading ? "Sending mail..." : "Send mail"}

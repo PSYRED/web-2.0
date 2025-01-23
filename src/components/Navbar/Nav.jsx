@@ -39,7 +39,7 @@ const Nav = () => {
         }
       >
         <Link to={"/"}>
-          <img src={logo} alt="" className="h-[5vh]    " />
+          <img src={logo} alt="" className="h-[5vh] w-[34vw] md:w-[15vw]    " />
         </Link>
         <div className="lg:flex hidden  items-center space-x-4 justify-between   ">
           <ul className="flex font-roboto font-semibold space-x-4 ">

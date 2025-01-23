@@ -65,20 +65,20 @@ function App() {
             />
           </div>
         )}
-        <div className="lg:h-[100vh] flex justify-center     ">
+        <div className="lg:h-[100vh] h-[50vh]  flex justify-center     ">
           <div className="object-cover brightness-75    w-full lg:h-[100vh] h-[70vh]">
             <img
               src={corpo4}
-              className="lg:h-[100vh] h-[70vh] lg:w-full lg:object-cover lg:object-right-bottom object-cover object-center  "
+              className="lg:h-[100vh] h-[50vh] md:w-full lg:w-full lg:object-cover lg:object-right-bottom object-cover object-center  "
               alt=""
               srcset=""
               onLoad={() => setIsLoading(true)}
             />
           </div>
 
-          <div className="md:flex justify-center   font-nunito lg:top-[25rem] top-[15rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[2rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
+          <div className="md:flex justify-center   font-nunito lg:top-[25rem] top-[15rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[1rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
             <div className=" flex-col items-center flex  space-y-[3rem]  lg:space-y-[2rem]   ">
-              <h1 className="font-bold lg:pl-20 pl-0 text-center lg:text-4xl     text-3xl ">
+              <h1 className="font-bold lg:pl-20 pl-0 text-center lg:text-4xl     text-2xl ">
                 Experience Ultimate Freedom With The
                 <span className=" text-red-400"> 3:0:0:0</span>
               </h1>
@@ -89,14 +89,14 @@ function App() {
 
       {/* About us */}
 
-      <div className="  flex   lg:items-center flex-col         lg:space-y-0   space-y-[3rem]  bg-black font-nunito text-center text-white  pb-[10rem]    ">
-        <h3 className="text-4xl mt-8 ">
+      <div className="  flex   lg:items-center flex-col lg:space-y-0   space-y-[2rem]  bg-black font-nunito text-center text-white  pb-[10rem]    ">
+        <h3 className="text-4xl mt-8 "> 
           <span className="text-red-400">3:0:0:0</span>
         </h3>
-        <p className="md:text-3xl text-2xl underline underline-offset-8 underline-re  py-4 lg:border-b-4 lg:border-red-500 ">
-          Revolutionizing Mobile Living
+        <p className="md:text-3xl text-2xl  lg:py-4  lg:border-b-4 lg:border-red-500  ">
+          Brand new camper technology
         </p>
-        <div className="space-y-10 text-xl pt-10">
+        <div className="md:space-y-10 px-6 text-xl pt-10 space-y-9 ">
           <p>Say Goodbye to RV Parks Forever</p>
           <p>Freedom from Utility Connections </p>
           <p>100% Solar Powered</p>
@@ -112,7 +112,7 @@ function App() {
       <CarouselComp />
 
       <div className="  flex   lg:items-center flex-col  md:mt-[-3rem]        lg:space-y-0   space-y-[3rem]  bg-black font-nunito text-center text-white  pb-6    ">
-        <p className="text-3xl py-4 border-b-4 border-red-500 ">
+        <p className="text-3xl py-4 lg:border-b-4 lg:border-red-500 ">
           Secure your spot today
         </p>
         <div className="space-y-10 text-xl pt-10">
