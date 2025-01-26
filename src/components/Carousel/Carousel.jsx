@@ -1,8 +1,8 @@
 import React from 'react'
 import { Carousel } from "react-responsive-carousel";
-import ship2 from "../../assets/10001.jpg";
-import air from "../../assets/10002.jpg";
-import trucks from "../../assets/10003.jpg";
+import ship2 from "../../assets/psyred_assets/RAM.png";
+import air from "../../assets/psyred_assets/GMC.png";
+import trucks from "../../assets/psyred_assets/shader.png";
 
 
 const CarouselComp = () => {
@@ -21,6 +21,8 @@ const CarouselComp = () => {
         text: "Bienvenue chez Grace Global Logistics ",
         pic: ship2,
       },
+
+       
     ];
   return (
     <div className="relative h-[65vh] lg:h-full   ">

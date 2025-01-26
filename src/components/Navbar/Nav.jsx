@@ -34,7 +34,7 @@ const Nav = () => {
       <nav
         className={
           isScrolled
-            ? `nav-scrolled flex  font-nunito  items-center p-2 py-10 w-full lg:fixed   text-white z-10 lg:py-[4rem] bg-red-200  lg:px-[10rem] justify-between`
+            ? `nav-scrolled flex  font-nunito  items-center p-2 py w-full lg:fixed   text-white z-10 lg:py-[2rem]  lg:px-[10rem] justify-between`
             : `flex   items-center p-2 w-full lg:fixed font-nunito  text-white z-10  lg:px-[10rem] justify-between`
         }
       >
@@ -53,13 +53,13 @@ const Nav = () => {
               to={"about"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
-              About
+              About  
             </Link>
             <Link
               to={"services"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
-              Our Services
+              Products 
             </Link>
 
             <Link

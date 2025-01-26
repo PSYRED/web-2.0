@@ -10,6 +10,7 @@ import About from "./pages/About.jsx"
 import Contact from "./pages/Contact.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Careers from "./pages/Careers.jsx"
+import Product_one from "./pages/Product_one.jsx";
 import { Footer2 } from "./components/Footer/Footer2.jsx";
 import Services from "./pages/Services.jsx";
 
@@ -37,8 +38,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="contact" element={<Contact />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="services" element={<Services />} />
+          <Route path="services/product_one" element={<Product_one />} />
+
         </Route>
-      </Routes>
+          
+            
+
+       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
