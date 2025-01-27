@@ -24,7 +24,7 @@ const Product_three = () => {
           />
         </div>
 
-        <div className="md:flex justify-center   font-nunito    top-[18rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[1rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
+        <div className="md:flex justify-center   font-nunito top-[10rem]    lg:top-[18rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[1rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
           <div className=" flex-col items-center flex  space-y-[3rem]  lg:space-y-[2rem]   ">
             <h1 className="font-bold  lg:text-5xl     text-2xl ">
               Meet the BRP Three
