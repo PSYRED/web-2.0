@@ -53,13 +53,30 @@ const Nav = () => {
               to={"about"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
-              About  
+              About
             </Link>
-            <Link
-              to={"services"}
-              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
-            >
-              Products 
+            <Link className=" group relative hover:transition-colors duration-150    p-2 ">
+              Products V
+              <div className="  px-4 whitespace-nowrap group-hover:flex group-hover:transition-all group-hover:duration-100 flex-col hidden absolute  border rounded-md space-y-2 py-2 ">
+                <Link
+                  to={"services/product_one"}
+                  className="hover:border-b-2 border-b-red-400"
+                >
+                  BRP
+                </Link>
+                <Link
+                  to={"services/product_two"}
+                  className="hover:border-b-2 border-b-red-400"
+                >
+                  BRP 2
+                </Link>
+                <Link
+                  to={"services/product_three"}
+                  className="hover:border-b-2 border-b-red-400 "
+                >
+                  BRP 3
+                </Link>
+              </div>
             </Link>
 
             <Link

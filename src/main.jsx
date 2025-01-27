@@ -5,13 +5,15 @@ import "./index.css";
 import { BrowserRouter, Outlet, Routes,Route } from "react-router-dom";
 
 import Nav from "./components/Navbar/Nav.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+
 import About from "./pages/About.jsx"
 import Contact from "./pages/Contact.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Careers from "./pages/Careers.jsx"
 import Product_one from "./pages/Product_one.jsx";
-import { Footer2 } from "./components/Footer/Footer2.jsx";
+import Product_two from "./pages/Product_two.jsx"; 
+import Product_three from "./pages/Product_three.jsx";
+
 import Services from "./pages/Services.jsx";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
@@ -29,7 +31,7 @@ const Layout = () => {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
@@ -39,12 +41,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="gallery" element={<Gallery />} />
           <Route path="services" element={<Services />} />
           <Route path="services/product_one" element={<Product_one />} />
-
+          <Route path="services/product_two" element={<Product_two />} />
+          <Route path="services/product_three" element={<Product_three />} />
         </Route>
-          
-            
-
-       </Routes>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
