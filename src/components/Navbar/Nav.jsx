@@ -4,7 +4,10 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { BiChevronDown } from "react-icons/bi";
+=======
+>>>>>>> e21703aab64a978c9b860606814db751d24ef5e8
 
 const Nav = () => {
   //change nav color when scrolling
@@ -50,11 +53,16 @@ const Nav = () => {
             >
               Home
             </Link>
+<<<<<<< HEAD
             {/* {/* <Link
+=======
+            <Link
+>>>>>>> e21703aab64a978c9b860606814db751d24ef5e8
               to={"about"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               About
+<<<<<<< HEAD
             </Link> */}
             <Link className=" group flex space-x-2 items-center relative hover:transition-colors duration-150      p-2 ">
               Products
@@ -62,6 +70,12 @@ const Nav = () => {
                 <BiChevronDown size={30} />
               
               <div className="  px-4 whitespace-nowrap group-hover:flex group-hover:transition-all group-hover:duration-100 flex-col hidden absolute top-10    border rounded-md space-y-2 py-2 ">
+=======
+            </Link>
+            <Link className=" group relative hover:transition-colors duration-150    p-2 ">
+              Products V
+              <div className="  px-4 whitespace-nowrap group-hover:flex group-hover:transition-all group-hover:duration-100 flex-col hidden absolute  border rounded-md space-y-2 py-2 ">
+>>>>>>> e21703aab64a978c9b860606814db751d24ef5e8
                 <Link
                   to={"services/product_one"}
                   className="hover:border-b-2 border-b-red-400"
@@ -89,11 +103,16 @@ const Nav = () => {
             >
               Careers
             </Link>
+<<<<<<< HEAD
             {/* <Link
+=======
+            <Link
+>>>>>>> e21703aab64a978c9b860606814db751d24ef5e8
               to={"gallery"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Portfolio
+<<<<<<< HEAD
             </Link> */}
           </ul>
         </div>
@@ -101,6 +120,15 @@ const Nav = () => {
           <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
             <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
               Sign In
+=======
+            </Link>
+          </ul>
+        </div>
+        <Link to={"contact"}>
+          <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
+            <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
+              Join the waitlist
+>>>>>>> e21703aab64a978c9b860606814db751d24ef5e8
             </p>
           </div>
         </Link>
