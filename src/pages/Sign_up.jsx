@@ -9,6 +9,8 @@ import GoogleLoginBtn from "../firebase/googleLoginBtn";
 import {auth, createUserWithEmailAndPassword,} from "../firebase/firebaseConfig";
 import {useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+
+import google_svg from '../assets/psyred_assets/google_icon.svg'
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -103,7 +105,7 @@ export default function Login() {
             <img src={login} alt="" className="" />
           </div>
 
-          <div className="flex  justify-center  lg:justify-end lg:mr-[10rem]    items-center   ">
+          <div className="flex  justify-center font-nunito  lg:justify-end lg:mr-[10rem]    items-center   ">
             <div className=" flex flex-col  items-center  lg:pt-[4rem] ">
               <div className="relative space-y-1 flex lg:w-full w-[100vw] bg-white  flex-col min-w-0   mb-6 shadow-lg rounded-lg  border-0">
                 <div className=" px-6 pt-4 space-y-">
@@ -115,8 +117,8 @@ export default function Login() {
                         className="lx:w-14 md:72 mt-6 lg:w-[25vw] h-auto p-14"
                       />
                     </div>
-                    <h6 className="text-blueGray-500 text-xl font-sora font-bold">
-                      {user ? `Welcome ${user.email}` : "Login"}
+                    <h6 className="text-blueGray-500 text-4xl font-sora font-bold">
+                      {user ? `Welcome ${user.email}` : "Sign In"}
                     </h6>
                   </div>
                 </div>
@@ -124,17 +126,17 @@ export default function Login() {
                   <div className="text-blueGray-400 text-center mb-3 font-bold"></div>
 
                   {/* Form  */}
-                  <form className="font-sora">
+                  <form className="font-nunito">
                     <div className="relative w-full mb-3">
                       <label
-                        className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                        className="block uppercase  text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
                         Email
                       </label>
                       <input
                         type="email"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        className="border border-gray-200 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)}
                       />
@@ -148,7 +150,7 @@ export default function Login() {
                       </label>
                       <input
                         type="password"
-                        className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        className="border border-gray-200 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                       />
@@ -158,9 +160,9 @@ export default function Login() {
                         <input
                           id="customCheckLogin"
                           type="checkbox"
-                          className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
+                          className="form-checkbox shadow-lg rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                         />
-                        <span className="ml-2 text-sm font-semibold text-blueGray-600">
+                        <span className="ml-2 text-sm  font-semibold text-blueGray-600">
                           Remember me
                         </span>
                       </label>
@@ -171,14 +173,16 @@ export default function Login() {
                         type="button"
                         onClick={handleEmailSignUp}
                       >
-                        {isLoading ? "Signing Up ..." : "Sign Up Using E-mail"}
+                        {isLoading ? "Signing In ..." : "Sign In Using E-mail"}
                       </button>
                     </div>
                     <div className="text-center mt-6">
                       <button
-                        className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                        className="bg-cyan-700 flex items-center justify-center space-x-4 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                         type="button"
                       >
+                        <img src={google_svg} className="h-8" alt="" srcset="" />
+
                         <GoogleLoginBtn />
                       </button>
                     </div>

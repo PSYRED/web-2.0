@@ -89,12 +89,7 @@ const Nav = () => {
             >
               Careers
             </Link>
-            {/* <Link
-              to={"gallery"}
-              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
-            >
-              Portfolio
-            </Link> */}
+     
           </ul>
         </div>
         <Link to={"sign_up"}>
