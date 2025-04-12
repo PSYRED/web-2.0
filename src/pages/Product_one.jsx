@@ -34,14 +34,10 @@ const Product_one = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Web Development
+            Innovative Tag Key
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech, we specialize in creating innovative, user-centric
-            web solutions that help businesses thrive in the digital world. Our
-            comprehensive web development services are designed to meet the
-            unique needs of each client, ensuring a seamless and impactful
-            online presence
+          Our Bed covers , racks and bed caps all use an innovative key system. A small electronic key for your bed cover storage. Unlock your cargo spaces with a push of a button.
           </p>
         </div>
       </div>
@@ -51,13 +47,10 @@ const Product_one = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Mobile-App development
+            Organised Cargo
           </h2>
           <p className="font-nunito lg:text-lg ">
-            We also create powerful, user-friendly mobile applications that
-            transform how businesses interact with their customers. Our mobile
-            app development services are designed to meet the unique needs of
-            your business, ensuring a seamless and engaging user experience.
+          More space to keep your tools organised. The BRP I comes with small utility spaces at the front of the cover. With the push of a button, you can open your utility space. You can also open the main cargo door on the sports model..
           </p>
         </div>
       </div>
@@ -68,14 +61,10 @@ const Product_one = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Digital Marketing
+            Advanced Technology
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech we understand that a successful digital strategy goes
-            beyond just having a great website or mobile app. Our comprehensive
-            digital marketing services are designed to help you connect with
-            your target audience, drive engagement, and achieve your business
-            goals
+          The BRP I comes with advanced technology. The sports model comes with our Rear Light bar and GPS tracker, further making your truck safe in more than one ways.
           </p>
         </div>
       </div>

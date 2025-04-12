@@ -39,14 +39,10 @@ const Product_three = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Web Development
+            Security automated 
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech, we specialize in creating innovative, user-centric
-            web solutions that help businesses thrive in the digital world. Our
-            comprehensive web development services are designed to meet the
-            unique needs of each client, ensuring a seamless and impactful
-            online presence
+          The BRP III is compatible with trucks of all sizes, model and year. This enables it with security features that put owners at ease, with a live security camera that can be streamed from any device.
           </p>
         </div>
       </div>
@@ -56,13 +52,10 @@ const Product_three = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Mobile-App development
+            Innovative Key System 
           </h2>
           <p className="font-nunito lg:text-lg ">
-            We also create powerful, user-friendly mobile applications that
-            transform how businesses interact with their customers. Our mobile
-            app development services are designed to meet the unique needs of
-            your business, ensuring a seamless and engaging user experience.
+          Like all our bed racks, the system comes with a key tag that can unlock storage with a push of a button. The tag can be connected to your phone for more accessibility and remote control.
           </p>
         </div>
       </div>
@@ -73,14 +66,10 @@ const Product_three = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Digital Marketing
+            Rigid design 
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech we understand that a successful digital strategy goes
-            beyond just having a great website or mobile app. Our comprehensive
-            digital marketing services are designed to help you connect with
-            your target audience, drive engagement, and achieve your business
-            goals
+          The BRP III weighs 155 lbs in total and is built to withstand 650 lbs of load on top. Not only does it give you overall strength but it is designed to your truck a rigid look to standout on the road.
           </p>
         </div>
       </div>

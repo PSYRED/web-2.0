@@ -35,14 +35,10 @@ const Product_two = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Web Development
+            Storage Cabin
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech, we specialize in creating innovative, user-centric
-            web solutions that help businesses thrive in the digital world. Our
-            comprehensive web development services are designed to meet the
-            unique needs of each client, ensuring a seamless and impactful
-            online presence
+          Our BRP II model comes with a new standout look for bed truck racks and their possible utility. BRP II is made for truck owners that are looking for more space while maximising truck look.
           </p>
         </div>
       </div>
@@ -52,13 +48,10 @@ const Product_two = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Mobile-App development
+            Innovative key
           </h2>
           <p className="font-nunito lg:text-lg ">
-            We also create powerful, user-friendly mobile applications that
-            transform how businesses interact with their customers. Our mobile
-            app development services are designed to meet the unique needs of
-            your business, ensuring a seamless and engaging user experience.
+          No more having to look for your keys. BRP II cabin and storage opens just when pushing a button. Keeping your materials safe
           </p>
         </div>
       </div>
@@ -69,14 +62,10 @@ const Product_two = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Digital Marketing
+            Extra accessories
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech we understand that a successful digital strategy goes
-            beyond just having a great website or mobile app. Our comprehensive
-            digital marketing services are designed to help you connect with
-            your target audience, drive engagement, and achieve your business
-            goals
+          The side rails on the rack for the BRP II system enable different kinds of accessory attachment to be added on the system. From securing mountain bikes to ladders, BRP II increases utility and eases load out time and effort.
           </p>
         </div>
       </div>
