@@ -96,6 +96,12 @@ export default function Login() {
   const handleSignOut = async ()=> {
      await signOut(auth)
   }
+
+  useEffect (() => {
+    if (user) {
+      navigate('/dashboard/stats');
+    }
+  }, [user, navigate])
   return (
     <>
       <ToastContainer />
