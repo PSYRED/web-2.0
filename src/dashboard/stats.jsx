@@ -133,7 +133,7 @@ const getImagePath = (view= 'top') => {
             <option value="Ford">Ford</option>
             <option value="GMC">GMC</option>
           </select>
-          <button onClick={navigate('/dashboard/Checkout', {
+          {/* <button onClick={navigate('/dashboard/Checkout', {
             state: {
               brand,
               model,
@@ -143,7 +143,7 @@ const getImagePath = (view= 'top') => {
           })} className="bg-blue-600 text-white px-4 py-2 rounded-md mt-4" style={{
             width: 'fit-content'
           }
-}></button>
+}></button> */}
           <button onClick={handleLogout} className="bg-red-600">Sign Out </button>
 
         </div>
