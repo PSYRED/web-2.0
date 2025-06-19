@@ -26,10 +26,13 @@ import Checkout from "./dashboard/Checkout.jsx";
 const Layout = () => {
   return (
     <>
-      <Nav />
-      <Outlet />
-      <Footer3/>
+          <AuthProvider>
+            <Nav />
+            <Outlet />
+            <Footer3/>
 
+          </AuthProvider>
+      
    
     </>
   );
@@ -39,7 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
    
     <BrowserRouter>
-      <AuthProvider>
+
 
       <ScrollToTop />
       <Routes>
@@ -59,7 +62,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
         </Route>
       </Routes>
-     </AuthProvider>
+     
     </BrowserRouter>
   </React.StrictMode>
 );

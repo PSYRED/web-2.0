@@ -5,11 +5,13 @@ import { IoMdClose } from "react-icons/io";
 import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import { BiChevronDown } from "react-icons/bi";
-
+import { useAuth } from "../../auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Nav = () => {
   //change nav color when scrolling
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const {user,handleLogout} = useAuth()
+  const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -23,11 +25,17 @@ const Nav = () => {
    
   const handletoggle = () => { 
     setOpenModal(!openModal) 
-      
+        
+    }
 
-     
-    
-
+  const handleClick = ()=> {
+    if (user) {
+        handleLogout()
+   
+      }
+    else {
+      navigate('/sign_up')
+    }
   }
 
   return (
@@ -92,13 +100,13 @@ const Nav = () => {
      
           </ul>
         </div>
-        <Link to={"sign_up"}>
+        <button onClick={handleClick}>
           <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
             <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
-              Sign In
+              {user ? 'Sign Out' : 'Sign in'}
             </p>
           </div>
-        </Link>
+        </button>
 
         <div className="lg:hidden text-4xl text-black " onClick={handletoggle}>
           {openModal ? <IoMdClose /> : <BiMenuAltRight />}

@@ -133,18 +133,15 @@ const getImagePath = (view= 'top') => {
             <option value="Ford">Ford</option>
             <option value="GMC">GMC</option>
           </select>
-          {/* <button onClick={navigate('/dashboard/Checkout', {
-            state: {
-              brand,
-              model,
-              brp,
-              color
-            }
-          })} className="bg-blue-600 text-white px-4 py-2 rounded-md mt-4" style={{
-            width: 'fit-content'
-          }
-}></button> */}
-          <button onClick={handleLogout} className="bg-red-600">Sign Out </button>
+          <div className=' pt-6'>
+
+            <button 
+              onClick={()=>navigate('/dashboard/checkout')}
+            className="px-6 py-3  bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-colors transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+        >
+            Proceed to Checkout
+        </button>
+          </div>
 
         </div>
       </div>

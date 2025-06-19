@@ -6,7 +6,7 @@ import login from "../../src/assets/psyred_assets/shot5.png";
 import fabIcon from "../../src/assets/psyred_assets/official_logo.png";
 
 import GoogleLoginBtn from "../firebase/googleLoginBtn";
-import {auth, createUserWithEmailAndPassword,} from "../firebase/firebaseConfig";
+import {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword,} from "../firebase/firebaseConfig";
 import {useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 
@@ -21,50 +21,7 @@ export default function Login() {
   const navigate = useNavigate(); 
   const {user,signOut} = useAuth()
   
-  // handle login logic 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   try {
-  //     const response = await axios.post(
-  //       "https://fablab-backend-api.onrender.com/auth/login",
-  //       {
-  //         email: email,
-  //         password: password,
-  //       }
-  //     );
-  //     console.log(response);
-  //     toast.success(response.data.message);
-  //     localStorage.setItem("user", JSON.stringify(response.data.user));
-  //     localStorage.setItem("token", response.data.access_token);
-  //     const token = localStorage.getItem("token");
-  //     setTimeout(() => {
-  //       if (response.data.user.role === "admin") {
-  //         console.log(token);
-  //         navigate(`/dashboard/stats`);
-  //       } else {
-  //         navigate("/");
-  //       }
-  //     }, 3000);
-  //   } catch (error) {
-  //     console.error(error);
-  //     if (error.response) {
-  //       // The request was made and the server responded with a status code
-  //       if (error.response.status === 401) {
-  //         toast.error("Incorrect password. Please try again.");
-  //       } else {
-  //         toast.error(`Correct Email or Password`);
-  //       }
-  //     } else if (error.request) {
-  //       // The request was made but no response was receiv
-  //       toast.error("Network error. Please try again later.");
-  //     } else {
-  //       toast.error("An unexpected error occurred. Please try again later.");
-  //     }
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+
 
   
   // Monitor user session 
@@ -89,7 +46,7 @@ export default function Login() {
     } catch (err) {
       setError(err.message);
       toast.error(err.message)
-      console.log(err.message)
+      console.log('Error creating Message :',err.message)
     }
   }
 
@@ -97,6 +54,22 @@ export default function Login() {
      await signOut(auth)
   }
 
+  const handleLogin = async ()=> {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth,email,password);
+      console.log('User Logged in :',userCredential.user.email)
+
+    }
+    catch (error){
+      console.log('Log in Error: ',error.message)
+      if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+        alert("Invalid credentials");
+      } else {
+        alert("Error: " + error.message);
+      }
+    }
+
+  }
   useEffect (() => {
     if (user) {
       navigate('/dashboard/stats');
@@ -192,12 +165,17 @@ export default function Login() {
                         <GoogleLoginBtn />
                       </button>
                     </div>
-                    <button
-                      className="bg-red-500 mx-auto text-white  flex"
-                      onClick={handleSignOut}
-                    >
-                      <p>Sign Out </p>
-                    </button>
+
+                    <div className="text-center mt-6">
+                      <button
+                        className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={handleLogin}
+                      >
+                        {isLoading ? "Logging in ..." : "Login with E-mail "}
+                      </button>
+                    </div>
+                    
                   </form>
                 </div>
               </div>

@@ -128,8 +128,8 @@ const App = () => {
     const orderTotal = subtotal + shippingCost + estimatedTax;
 
     return (
-        <div className="min-h-screen flex items-start justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl w-full bg-white shadow-2xl rounded-2xl p-6 sm:p-10 lg:p-12 space-y-8 md:flex md:space-x-12 md:space-y-0">
+        <div className="min-h-screen flex bg-[#A8A8A8] items-start justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl w-full bg-white  shadow-2xl rounded-2xl p-6 sm:p-10 lg:p-12 space-y-8 md:flex md:space-x-12 md:space-y-0">
 
                 {/* Left Column: Checkout Form */}
                 <div className="flex-1">
