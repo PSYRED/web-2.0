@@ -42,7 +42,7 @@ export default function Login() {
       await createUserWithEmailAndPassword(auth, email, password);
       setIsLoading(true);
       toast.success('Email sign in successfull') 
-      navigate('/dashboard/stats')
+      navigate('/dashboard/Home')
     } catch (err) {
       setError(err.message);
       toast.error(err.message)
@@ -72,7 +72,7 @@ export default function Login() {
   }
   useEffect (() => {
     if (user) {
-      navigate('/dashboard/stats');
+      navigate('/dashboard/Home');
     }
   }, [user, navigate])
   return (

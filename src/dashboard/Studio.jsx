@@ -1,12 +1,20 @@
-import React, { useEffect } from 'react'
-import { useAuth } from '../auth/AuthContext'
-import { useState } from 'react'
+import React from 'react'
+import { useEffect,useState} from 'react';
+import {useLocation} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-// import pic from '../assets/imgclone/STUDIO/Toyota/Artic armor/top.png//'
-const Stats = () => {
-  const {user,handleLogout} = useAuth()
-  const navigate = useNavigate(); 
-  
+
+
+export const Studio = () => {
+
+const location = useLocation()
+ const navigate = useNavigate(); 
+
+const [brp,setBrp] = useState('')
+const [color,setColor] = useState('Artic armor')
+const [brand,setBrand] = useState(location.state?.brand ||'Toyota')
+const [model,setModel] = useState('')
+
+
   const brandData = {
   Toyota: {},
   RAM: {
@@ -18,14 +26,7 @@ const Stats = () => {
   Rivian: {},
   Chevrolet : {}
 };
-
-const [brp,setBrp] = useState('')
-const [color,setColor] = useState('Artic armor')
-const [brand,setBrand] = useState('Toyota')
-const [model,setModel] = useState('')
- 
-
-const getImagePath = (view= 'top') => {
+  const getImagePath = (view= 'top') => {
   let path = `/imgclone/STUDIO/${brand}/`
   
   if (model) {
@@ -43,6 +44,7 @@ const getImagePath = (view= 'top') => {
   return path
 }
 
+
  
  useEffect (() => {
     if (color && brand) {
@@ -51,8 +53,12 @@ const getImagePath = (view= 'top') => {
      }
   }, [color, brand,brp,model])
 
+  
+
+
   return (
-    <>
+    <div>
+      
       <div className='flex  items-center bg-black py-[12rem] px-[5rem]'>
         <div className="text-4xl font-bold text-white w-1/2">
          <div>
@@ -80,22 +86,11 @@ const getImagePath = (view= 'top') => {
         </div>
         <div className='w-1/2 text-center flex flex-col items-center space-y-2 '>
           
-          <div className=''>Brand</div>
-          <select value={brand} name="brand" onChange={(e)=> {setBrand(e.target.value) 
-          setBrp('') 
-          setModel('')
-          }}  className='rounded-md' id="">
-            <option value="" disabled selected hidden>Select brand</option>
-            {Object.keys(brandData).map((b)=> (
-              <option key={b} value={b}>{b}</option>
-            ))}
-             
-
-          </select>
+           
           
           <div className=''>Model</div>
           <select value={model} disabled={!brand || Object.keys(brandData[brand]?.models || {}).length === 0 } onChange={(e)=> setModel(e.target.value)}
-  className='rounded-md' id="">
+          className='rounded-md' id="">
             
             <option value="" disabled selected hidden>Select Model</option>
 
@@ -145,8 +140,6 @@ const getImagePath = (view= 'top') => {
 
         </div>
       </div>
-    </>
-  );
+    </div>
+  )
 }
-
-export default Stats

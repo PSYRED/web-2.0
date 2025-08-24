@@ -21,8 +21,9 @@ import Footer3 from "./components/Footer/Footer3.jsx";
 import Sign_up from "./pages/Sign_up.jsx";
 
 import { AuthProvider } from "./auth/AuthContext.jsx";
-import Stats from "./dashboard/stats.jsx";
 import Checkout from "./dashboard/Checkout.jsx";
+import Home from "./dashboard/Home.jsx";
+import { Studio } from "./dashboard/Studio.jsx";
 const Layout = () => {
   return (
     <>
@@ -57,7 +58,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="services/product_two" element={<Product_two />} />
           <Route path="services/product_three" element={<Product_three />} />
           <Route path="sign_up" element={<Sign_up />} />
-          <Route path="dashboard/stats" element={<Stats/>} />
+          <Route path="dashboard/Home" element={<Home/>} />
+          <Route path="dashboard/Studio" element={<Studio/>} />
+
           <Route path="dashboard/Checkout" element={<Checkout/>} />
           
         </Route>

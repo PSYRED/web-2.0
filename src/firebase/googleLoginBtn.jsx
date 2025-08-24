@@ -16,7 +16,7 @@ const GoogleLoginBtn = () => {
          const result = await signInWithPopup(auth, provider);
          console.log(result,'result')
          setUser(result.user); // Store user info in state
-         navigate("/dashboard/stats");
+         navigate("/dashboard/Home");
        } catch (error) {
          console.error("Error signing in:", error);
        }

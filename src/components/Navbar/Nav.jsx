@@ -15,7 +15,7 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 700);
+      setIsScrolled(scrollTop > 500);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -97,12 +97,19 @@ const Nav = () => {
             >
               Careers
             </Link>
+
+            {user &&  <Link
+              to={"/dashboard/home"}
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
+            >
+              Dashboard
+            </Link>}
      
           </ul>
         </div>
         <button onClick={handleClick}>
           <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
-            <p className="px-4 py-2 font-bold font-nunito border-white border border-2 text-white ">
+            <p className="px-4 py-2 font-bold font-nunito border-white border-2 text-white ">
               {user ? 'Sign Out' : 'Sign in'}
             </p>
           </div>
