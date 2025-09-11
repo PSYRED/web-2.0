@@ -11,13 +11,13 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2Ys8B_if7YyCQjhywlGHbaf2mIWmJ2ig",
-  authDomain: "test-server-psyred.firebaseapp.com",
-  projectId: "test-server-psyred",
-  storageBucket: "test-server-psyred.firebasestorage.app",
-  messagingSenderId: "999336913147",
-  appId: "1:999336913147:web:c6e957e372c48328dc685e",
-  measurementId: "G-NWG1XG4QG9"
+  apiKey: "AIzaSyAIiMcGBvRi6YBCCLa3O0TOaCrNm1To_uY",
+  authDomain: "psyred-project.firebaseapp.com",
+  projectId: "psyred-project",
+  storageBucket: "psyred-project.firebasestorage.app",
+  messagingSenderId: "362266748990",
+  appId: "1:362266748990:web:a1212526b42171c501496f",
+  measurementId: "G-XGPCR7ZSPC",
 };
 
 // Initialize Firebase
