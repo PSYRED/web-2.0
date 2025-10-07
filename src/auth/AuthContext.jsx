@@ -2,6 +2,7 @@ import { createContext,useContext,useState,useEffect,  } from "react";
 import { auth } from "../firebase/firebaseConfig";
 import { onAuthStateChanged,signOut } from "../firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../lib/supabaseClient";
 //create global context 
 const AuthContext = createContext();
 
@@ -11,6 +12,7 @@ export const AuthProvider = ({children}) => {
 
     // listen for auth changes 
     useEffect(() => {
+        
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         console.log(currentUser, "currentUser");
         setUser(currentUser);

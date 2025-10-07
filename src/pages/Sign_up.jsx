@@ -8,73 +8,131 @@ import fabIcon from "../../src/assets/psyred_assets/official_logo.png";
 import GoogleLoginBtn from "../firebase/googleLoginBtn";
 import {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword,} from "../firebase/firebaseConfig";
 import {useNavigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthContext";
+import { useAuth } from "../auth/SupabaseContext";
 
 import google_svg from '../assets/psyred_assets/google_icon.svg'
+import { supabase } from "../lib/supabaseClient";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error , setError] = useState('')
+
+  const [isLogin,setIsLogin] = useState(false)
   
   
   const navigate = useNavigate(); 
-  const {user,signOut} = useAuth()
+  const {session,signOut} = useAuth()
   
 
 
   
-  // Monitor user session 
+  async function signInWithGoogle() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin + '/dashboard/Home', 
+    },
+  });
+
+  if (error) console.error('Google login error:', error.message);
+}
 
   
 
   const handleEmailSignUp= async (e) => {
+    console.log('Login :',isLogin)
     e.preventDefault();
     setError("");
-    
+    setIsLoading(true)
     // Basic form validation
     if (!email.trim() || !password.trim()) {
       toast.error("Email and password are required.");
+      setIsLoading(false)
       return;
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setIsLoading(true);
-      toast.success('Email sign in successfull') 
-      navigate('/dashboard/Home')
-    } catch (err) {
-      setError(err.message);
-      toast.error(err.message)
-      console.log('Error creating Message :',err.message)
-    }
-  }
+      if (!isLogin) {
+         const {error} = await supabase.auth.signUp({email,password})
+          if (error) {
+            if (error.message.includes('User already registered')) {
+              toast.info('Account already exists! Please log in instead.')
+              setIsLogin(true) 
+              setIsLoading(false)
+              return
+            }
+         
+          
+          setIsLogin(true)
 
-  const handleSignOut = async ()=> {
-     await signOut(auth)
-  }
-
-  const handleLogin = async ()=> {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth,email,password);
-      console.log('User Logged in :',userCredential.user.email)
-
-    }
-    catch (error){
-      console.log('Log in Error: ',error.message)
-      if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
-        alert("Invalid credentials");
-      } else {
-        alert("Error: " + error.message);
+        return
       }
+
+      navigate('/dashboard/Home');
+      toast.success('Sign up success');
     }
 
+        else {
+          const {data,error} = await supabase.auth.signInWithPassword({email,password})
+          if (error) {
+            toast.error(`${error}`)
+            console.error('Error logging in:',error)
+            return
+          }
+
+          toast.success('Logged in successfully with supabase')
+          navigate('/dashboard/Home');
+          console.log('Login response :',data)
+         
+
+        }
+      }
+      catch (err) {
+        setError(err.message);
+        toast.error(err.message)
+        console.log('Error signing in:',err.message)
+      }
+      finally {
+        setIsLoading(false);
+      }
   }
+
+  // const handleSignOut = async ()=> {
+  //    await signOut(auth)
+  // }
+
+  // const handleLogin = async ()=> {
+  //   try {
+  //     const userCredential = await signInWithEmailAndPassword(auth,email,password);
+  //     console.log('User Logged in :',userCredential.user.email)
+
+  //   }
+  //   catch (error){
+  //     console.log('Log in Error: ',error.message)
+  //     if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+  //       alert("Invalid credentials");
+  //     } else {
+  //       alert("Error: " + error.message);
+  //     }
+  //   }
+
+  // }
   useEffect (() => {
-    if (user) {
+    if (session) {
       navigate('/dashboard/Home');
     }
-  }, [user, navigate])
+  }, [session, navigate])
+
+  // console.log(supabase)
+
+  const buttonText = isLoading
+    ? isLogin
+      ? "Logging In..."
+      : "Signing Up..."
+    : isLogin
+    ? "Log In"
+    : "Sign Up";
   return (
     <>
       <ToastContainer />
@@ -97,7 +155,7 @@ export default function Login() {
                       />
                     </div>
                     <h6 className="text-blueGray-500 text-4xl font-sora font-bold">
-                      {user ? `Welcome ${user.email}` : "Sign In"}
+                      {session ? `Welcome ${session}` : "Sign In"}
                     </h6>
                   </div>
                 </div>
@@ -149,24 +207,24 @@ export default function Login() {
                     <div className="text-center mt-6">
                       <button
                         className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                        type="button"
+                        type="submit"
                         onClick={handleEmailSignUp}
                       >
-                        {isLoading ? "Signing In ..." : "Sign In Using E-mail"}
+                        {buttonText}
                       </button>
                     </div>
                     <div className="text-center mt-6">
                       <button
                         className="bg-cyan-700 flex items-center justify-center space-x-4 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                        type="button"
+                        type="button" onClick={signInWithGoogle}
                       >
                         <img src={google_svg} className="h-8" alt="" srcset="" />
 
-                        <GoogleLoginBtn />
+                        
                       </button>
                     </div>
 
-                    <div className="text-center mt-6">
+                    {/* <div className="text-center mt-6">
                       <button
                         className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                         type="button"
@@ -174,7 +232,7 @@ export default function Login() {
                       >
                         {isLoading ? "Logging in ..." : "Login with E-mail "}
                       </button>
-                    </div>
+                    </div> */}
                     
                   </form>
                 </div>

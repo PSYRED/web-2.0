@@ -20,19 +20,19 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 import Footer3 from "./components/Footer/Footer3.jsx";
 import Sign_up from "./pages/Sign_up.jsx";
 
-import { AuthProvider } from "./auth/AuthContext.jsx";
+import { AuthProvider } from "./auth/SupabaseContext.jsx";
 import Checkout from "./dashboard/Checkout.jsx";
 import Home from "./dashboard/Home.jsx";
 import { Studio } from "./dashboard/Studio.jsx";
 const Layout = () => {
   return (
     <>
-          <AuthProvider>
+          
             <Nav />
             <Outlet />
             <Footer3/>
 
-          </AuthProvider>
+          
       
    
     </>
@@ -44,6 +44,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
    
     <BrowserRouter>
 
+    <AuthProvider>
 
       <ScrollToTop />
       <Routes>
@@ -65,6 +66,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
         </Route>
       </Routes>
+    </AuthProvider>
      
     </BrowserRouter>
   </React.StrictMode>

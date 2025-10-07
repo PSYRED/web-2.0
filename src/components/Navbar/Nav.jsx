@@ -5,12 +5,12 @@ import { IoMdClose } from "react-icons/io";
 import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import { BiChevronDown } from "react-icons/bi";
-import { useAuth } from "../../auth/AuthContext";
+import { useAuth } from "../../auth/SupabaseContext";
 import { useNavigate } from "react-router-dom";
 const Nav = () => {
   //change nav color when scrolling
   const [isScrolled, setIsScrolled] = useState(false);
-  const {user,handleLogout} = useAuth()
+  const {session,handleLogout} = useAuth()
   const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +29,7 @@ const Nav = () => {
     }
 
   const handleClick = ()=> {
-    if (user) {
+    if (session) {
         handleLogout()
    
       }
@@ -98,7 +98,7 @@ const Nav = () => {
               Careers
             </Link>
 
-            {user &&  <Link
+            {session &&  <Link
               to={"/dashboard/home"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
@@ -110,7 +110,7 @@ const Nav = () => {
         <button onClick={handleClick}>
           <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
             <p className="px-4 py-2 font-bold font-nunito border-white border-2 text-white ">
-              {user ? 'Sign Out' : 'Sign in'}
+              {session ? 'Sign Out' : 'Sign in'}
             </p>
           </div>
         </button>

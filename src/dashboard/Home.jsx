@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
-import { useAuth } from '../auth/AuthContext'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../auth/SupabaseContext'
 // import pic from '../assets/imgclone/STUDIO/Toyota/Artic armor/top.png//'
+import { Navigate } from "react-router-dom";
+
 const Home = () => {
-  const {user,handleLogout} = useAuth()
+  
   const navigate = useNavigate(); 
   
-  
+  const {session,handleLogout} = useAuth()
 
 const brandLogos = [
   { name: 'Toyota', logo: '/imgclone/LOGOS/toyota.svg' },
@@ -16,7 +18,7 @@ const brandLogos = [
   { name: 'Chevrolet', logo: '/imgclone/LOGOS/chevrolet.svg' }
 ];
 
- 
+
 
 
   return (
