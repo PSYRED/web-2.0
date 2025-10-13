@@ -6,6 +6,7 @@ import { useAuth } from '../auth/SupabaseContext'
 import { Navigate } from "react-router-dom";
 
 const Home = () => {
+  if (!data.session) navigate('/');
   
   const navigate = useNavigate(); 
   

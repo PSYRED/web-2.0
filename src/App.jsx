@@ -1,36 +1,73 @@
 
 import "./App.css";
- import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
- 
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { IoTrendingUp } from "react-icons/io5";
- 
-
 import { CiMobile1 } from "react-icons/ci";
-  
 import corpo4 from './assets/psyred_assets/shot2.png'
 import Card from "./components/Card/Card";
-
 import { GiSpiderWeb } from "react-icons/gi";
 import Button1 from "./components/Button/Button1";
-  
- 
-
-
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
 import CarouselComp from "./components/Carousel/Carousel";
 
 import trucks from "./assets/psyred_assets/shot4.png";
+import Form from "./components/Form/Form";
 
+import { ToastContainer,toast } from "react-toastify";
 function App() {
    
 
    
-  const   [isLoading,setIsLoading] =useState(false)
+  const [isLoading,setIsLoading] =useState(false)
+  const [isOpen,setIsOpen] = useState(false);
+  const [isForming,setIsForm] = useState(false)
+
+  const [email, setEmail] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("")
+
+  console.log('Name :',fname)
+
+  const handleWaitingList = async (e,type)=> {
+    e.preventDefault();
+    
+    try {
+      setIsForm(true)
+      console.log('Fields in try...',fname,email,type)
+
+      const res = await fetch('http://localhost:3000/api/subscribe',{
+        method:'POST',
+        headers:{'Content-Type' :'application/json'},
+        body:JSON.stringify({email,fname,type})
+      });
+
+      console.log('Fields after:',email,fname,type)
+      const data = await res.json();
+
+      if(res.ok) {
+        
+        toast.success(data.message)
+
+      }else {
+        alert(data.error || 'Sub Failed');
+        console.log(data.error)
+      }
+    }
+      catch(err){
+        console.error(err)
+        setIsForm(false);
+
+        alert('Network Error');
+      }
+      setFname('');
+      setEmail('')
+      setIsForm(false);
+  }
 
   return (
     <>
+    <ToastContainer/>
       <div className="relative     ">
         {!isLoading && (
           <div className=" justify-center flex h-[100vh] bg-purple-200">
@@ -41,6 +78,9 @@ function App() {
             />
           </div>
         )}
+
+        
+
 
         {/* Hero section */}
         <div className="lg:h-[100vh] h-[50vh]  flex justify-center     ">
@@ -82,6 +122,80 @@ function App() {
       {/* carousel */}
       <CarouselComp />
 
+      {
+          isOpen && <div className="fixed inset-4 sm:inset-8 md:inset-16 lg:inset-32 
+w-[90%] sm:w-3/4 md:w-1/2 lg:w-1/3 
+rounded-2xl flex items-center justify-center 
+bg-slate-300">
+          <form onSubmit={(e)=>handleWaitingList(e,'waitinglist')} className="flex flex-col px-8  md:w-2/3 space-y-10   ">
+            <h2 className="text-purple-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
+              Join the waitlist
+            </h2>
+
+            <button
+              class="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              aria-label="Close" onClick={()=>setIsOpen(false)}
+>
+  ✕ 
+</button>
+
+            <input
+              type="text"
+              placeholder="First Name"
+              value={fname}
+              name=""
+              id=""
+              className=" rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
+              required
+              onChange={(e) => setFname(e.target.value)}
+            />
+
+
+
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              className=" outline-none hover:border-purple-400 border-2  border-gray-400 rounded-lg px-3 py-1 "
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <div className=" justify-center flex lg:justify-start">
+              <button
+                type="submit" 
+                className="px-4 py-2 bg-purple-600 focus:bg-black rounded-md text-white font-semibold"
+              >
+                {isForming ? "Joining..." : "Join waitlist"}
+              </button>
+            </div>
+          </form>
+
+          <div className="md:w-1/3 flex flex-col items-center  space-y-2 pt-[4rem] pb-[4rem]  ">
+            <div>
+              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+                Address
+              </h2>
+              <p className="text-[#3A3A3A]">KK 314 st, Kigali</p>
+            </div>
+
+            <div>
+              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+                Email
+              </h2>
+              <p className="text-[#3A3A3A]">KaribuTech12@gmail.com</p>
+            </div>
+
+            <div>
+              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+                Phone
+              </h2>
+              <p className="text-[#3A3A3A]">+2507848 24 525</p>
+            </div>
+          </div>
+        </div>
+        }
+
       <div className="  flex   lg:items-center flex-col  md:mt-[-3rem]        lg:space-y-0   space-y-[3rem]  bg-black font-nunito text-center text-white  pb-6    ">
         <p className="text-3xl py-4 lg:border-b-4 lg:border-red-500 ">
           Book your Bedrack today.
@@ -92,7 +206,9 @@ function App() {
           </p>
           <p>Starting at $599 </p>
           <p>Beta testers will receive a $250 discounts </p>
-          <Button1 text={"Sign Up "} />
+          <Button1 onClick={()=>{
+            setIsOpen(true)
+            console.log('click')} } text={"Sign Up "} />
         </div>
       </div>
 

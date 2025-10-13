@@ -45,7 +45,7 @@ const Form = () => {
       <ToastContainer />
       <div className="lg:pb-8   mb-32  lg:mb-[-5rem]   relative font-nunito  ">
         <div className="bg-image-2   " />
-        <div className="lg:mt-4 top-1    lg:pb-12 bg-purple-100 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
+        <div className="lg:mt-4 top-1    lg:pb-12 bg-red-200 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
           <form className="flex flex-col px-8  md:w-2/3 space-y-10   ">
             <h2 className="text-purple-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
               Join the waitlist

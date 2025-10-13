@@ -12,8 +12,8 @@ export const AuthProvider = ({children}) => {
     const fetchSession = async ()=> {
       const {data,error} = await supabase.auth.getSession();
       if (error) console.error("Error in fetching session :",error);
-      if (data.session) navigate('/dashboard/Home', { replace: true });
-      else navigate('/', { replace: true });
+      
+     
       setSession(data.session);
       
     }
