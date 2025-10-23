@@ -6,12 +6,17 @@ import { useAuth } from '../auth/SupabaseContext'
 import { Navigate } from "react-router-dom";
 
 const Home = () => {
-  if (!data.session) navigate('/');
-  
   const navigate = useNavigate(); 
-  
-  const {session,handleLogout} = useAuth()
+  const {session,handleLogout,loading} = useAuth()
 
+  useEffect(()=> {
+    if (!session && !loading) navigate('/');
+    
+  },[session,navigate,loading])
+  
+  
+  
+  
 const brandLogos = [
   { name: 'Toyota', logo: '/imgclone/LOGOS/toyota.svg' },
   { name: 'RAM', logo: '/imgclone/LOGOS/ram.svg' },

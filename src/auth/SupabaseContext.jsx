@@ -6,6 +6,8 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
   const [session,setSession] = useState(null);
+  const [loading,setLoading] = useState(true);
+  
   const navigate = useNavigate()
   
   useEffect(()=>{
@@ -13,8 +15,9 @@ export const AuthProvider = ({children}) => {
       const {data,error} = await supabase.auth.getSession();
       if (error) console.error("Error in fetching session :",error);
       
-     
+
       setSession(data.session);
+      setLoading(false);
       
     }
 
@@ -24,6 +27,7 @@ export const AuthProvider = ({children}) => {
       async (event,currentSession) => {
         console.log('Auth event:',event);
         setSession(currentSession);
+        setLoading(false);
       }
     );
 
@@ -53,7 +57,7 @@ export const AuthProvider = ({children}) => {
 };
 
   return (
-    <AuthContext.Provider value={{session,handleLogout}}>
+    <AuthContext.Provider value={{session,handleLogout,loading}}>
       {children}
     </AuthContext.Provider>    
   );
