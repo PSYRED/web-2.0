@@ -3,7 +3,7 @@ import Header from "../sections/OurServices/Header";
 import TwoColumn from "../sections/OurServices/TwoColumn";
 import { Outlet } from "react-router-dom";
 
-const Services = () => {
+const Products = () => {
   return (
     <div>
       <Header title={"Our Products"} />
@@ -13,4 +13,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Products;

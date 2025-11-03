@@ -23,7 +23,7 @@ function  Card({title,content,icon,color}) {
          {content}
        </p>
 
-       <Link to={"services"}>
+       <Link to={"products"}>
          <Button1 text={"Learn more"} />
        </Link>
      </div>

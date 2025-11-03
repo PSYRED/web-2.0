@@ -50,40 +50,35 @@ const Nav = () => {
         <Link to={"/"}>
           <img src={logo} alt="" className="h-[5vh] w-[34vw] md:w-[15vw]    " />
         </Link>
-        <div className="lg:flex hidden  items-center space-x-4 justify-between   ">
-          <ul className="flex font-roboto font-semibold space-x-4 ">
+         
+          <ul className="flex items-middle   font-roboto font-semibold space-x-4 ">
             <Link
               to={"/"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
               Home
             </Link>
-            {/* {/* <Link
-              to={"about"}
-              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
-            >
-              About
-            </Link> */}
-            <Link className=" group flex space-x-2 items-center relative hover:transition-colors duration-150      p-2 ">
+            
+            <Link  to={"products"} className=" group flex  items-center relative hover:transition-colors duration-150 p-1 ">
               Products
               
                 <BiChevronDown size={30} />
               
               <div className="  px-4 whitespace-nowrap group-hover:flex group-hover:transition-all group-hover:duration-100 flex-col hidden absolute top-10    border rounded-md space-y-2 py-2 ">
                 <Link
-                  to={"services/product_one"}
+                  to={"products/product_one"}
                   className="hover:border-b-2 border-b-red-400"
                 >
                   BRP
                 </Link>
                 <Link
-                  to={"services/product_two"}
+                  to={"products/product_two"}
                   className="hover:border-b-2 border-b-red-400"
                 >
                   BRP 2
                 </Link>
                 <Link
-                  to={"services/product_three"}
+                  to={"products/product_three"}
                   className="hover:border-b-2 border-b-red-400 "
                 >
                   BRP 3
@@ -91,11 +86,18 @@ const Nav = () => {
               </div>
             </Link>
 
-            <Link
-              to={"careers"}
+             <Link
+              to={"About"}
               className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
             >
-              Careers
+              About us 
+            </Link>
+
+            <Link
+              to={"contact"}
+              className="hover:border-b-2 border-b-red-400 p-2 transition-all duration-100"
+            >
+              Contact us 
             </Link>
 
             {session &&  <Link
@@ -106,7 +108,7 @@ const Nav = () => {
             </Link>}
      
           </ul>
-        </div>
+        
         <button onClick={handleClick}>
           <div className="space-x-4 items-center hover:bg-red-600 transition-colours duration-300  lg:flex hidden">
             <p className="px-4 py-2 font-bold font-nunito border-white border-2 text-white ">

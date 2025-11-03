@@ -1,11 +1,11 @@
 
 import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { IoTrendingUp } from "react-icons/io5";
-import { CiMobile1 } from "react-icons/ci";
+import { FaToolbox } from "react-icons/fa";
+import { IoIosCheckmark } from "react-icons/io";
 import corpo4 from './assets/psyred_assets/shot2.png'
 import Card from "./components/Card/Card";
-import { GiSpiderWeb } from "react-icons/gi";
+import { GiWeightLiftingUp } from "react-icons/gi";
 import Button1 from "./components/Button/Button1";
 import { RotatingLines } from "react-loader-spinner";
 import { useState } from "react";
@@ -122,14 +122,10 @@ function App() {
       {/* carousel */}
       <CarouselComp />
 
-      {
-          isOpen && <div className="fixed inset-4 sm:inset-8 md:inset-16 lg:inset-32 
-w-[90%] sm:w-3/4 md:w-1/2 lg:w-1/3 
-rounded-2xl flex items-center justify-center 
-bg-slate-300">
+      {isOpen && <div className="fixed inset-20 justify-center md:justify-start left-[1rem]  md:inset-16 lg:inset-32   md:w-1/2 lg:w-1/3 rounded-2xl flex items-center  bg-slate-900">
           <form onSubmit={(e)=>handleWaitingList(e,'waitinglist')} className="flex flex-col px-8  md:w-2/3 space-y-10   ">
-            <h2 className="text-purple-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
-              Join the waitlist
+            <h2 className="text-red-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
+              Request a quote
             </h2>
 
             <button
@@ -145,7 +141,7 @@ bg-slate-300">
               value={fname}
               name=""
               id=""
-              className=" rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
+              className=" rounded-lg outline-none hover:border-red-700 border-2  border-gray-400  px-3 py-1"
               required
               onChange={(e) => setFname(e.target.value)}
             />
@@ -156,7 +152,7 @@ bg-slate-300">
               type="email"
               placeholder="Email"
               value={email}
-              className=" outline-none hover:border-purple-400 border-2  border-gray-400 rounded-lg px-3 py-1 "
+              className=" outline-none hover:border-red-700 border-2  border-gray-400 rounded-lg px-3 py-1 "
               required
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -164,35 +160,15 @@ bg-slate-300">
             <div className=" justify-center flex lg:justify-start">
               <button
                 type="submit" 
-                className="px-4 py-2 bg-purple-600 focus:bg-black rounded-md text-white font-semibold"
+                className="px-4 py-2 bg-red-400 focus:bg-black rounded-md text-white font-semibold"
               >
-                {isForming ? "Joining..." : "Join waitlist"}
+                {isForming ? "Requesting..." : "Get a quote"}
               </button>
             </div>
           </form>
 
-          <div className="md:w-1/3 flex flex-col items-center  space-y-2 pt-[4rem] pb-[4rem]  ">
-            <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
-                Address
-              </h2>
-              <p className="text-[#3A3A3A]">KK 314 st, Kigali</p>
-            </div>
-
-            <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
-                Email
-              </h2>
-              <p className="text-[#3A3A3A]">KaribuTech12@gmail.com</p>
-            </div>
-
-            <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
-                Phone
-              </h2>
-              <p className="text-[#3A3A3A]">+2507848 24 525</p>
-            </div>
-          </div>
+          
+          
         </div>
         }
 
@@ -202,13 +178,13 @@ bg-slate-300">
         </p>
         <div className="space-y-10 text-xl pt-10">
           <p> 
-            Customers yours for free starting today 
+            Customize yours for free starting today 
           </p>
           <p>Starting at $599 </p>
           <p>Beta testers will receive a $250 discounts </p>
           <Button1 onClick={()=>{
             setIsOpen(true)
-            console.log('click')} } text={"Sign Up "} />
+            console.log('click')} } text={"Get a quote"} />
         </div>
       </div>
 
@@ -226,7 +202,7 @@ bg-slate-300">
       <div className=" w-full lg:pt-[8rem] pt-[4rem] text-white   lg:mt-0 lg:border-b  lg:border-b-red-400  mb-0 lg:px-10 px-4  pb-24 bg-gradient-to-b  bg-black   ">
         <div className=" flex flex-col items-center  ">
           <h3 className="lg:text-4xl text-2xl text-center max-w-screen-lg font-nunito pb-4 mb-4 font-semibold justify-center ">
-            Why the <span className="text-red-400">BRP</span>
+            Why the <span className="text-red-400">BED RACK PROJECT?</span>
           </h3>
         </div>
 
@@ -235,11 +211,11 @@ bg-slate-300">
             <Card
               color={"border-red-400 "}
               icon={
-                <GiSpiderWeb className=" text-white text-5xl group-hover:text-red-400  transition-colors duration-500 delay-150" />
+                <GiWeightLiftingUp className=" text-white text-5xl group-hover:text-red-400  transition-colors duration-500 delay-150" />
               }
-              title={"Web development"}
+              title={"Built for strength"}
               content={
-                "We specialize in creating high-quality, responsive websites that are tailored to meet the unique needs of your business."
+                "Made from heavy-duty steel, our bed racks are built to handle tough loads and rough roads without breaking a sweat."
               }
             />
           </div>
@@ -248,11 +224,10 @@ bg-slate-300">
             <Card
               color={"border-purple-500 "}
               icon={
-                <CiMobile1 className=" text-white text-5xl group-hover:text-red-400 transition-colors duration-500 delay-150" />
-              }
-              title={"Mobile App development"}
+                <IoIosCheckmark className=" text-white text-5xl group-hover:text-red-400 transition-colors duration-500 delay-150" />}
+              title={"Perfect Fit"}
               content={
-                "At Karibu Tech, we specialize in creating powerful, intuitive mobile applications that elevate your business and engage your users."
+                "Each rack is precision-designed to fit your truck perfectly — no drilling, no gaps, just a seamless match"
               }
             />
           </div>
@@ -261,11 +236,12 @@ bg-slate-300">
             <Card
               color={"border-purple-500 "}
               icon={
-                <IoTrendingUp className=" text-white text-5xl group-hover:text-red-400 transition-colors duration-500 delay-150" />
+                <FaToolbox  className=" text-white text-5xl group-hover:text-red-400 transition-colors duration-500 delay-150"/>
+                
               }
-              title={"Digital marketing "}
+              title={"Simple setup "}
               content={
-                "Our digital marketing services are designed to help you build a strong online presence, attract your target audience, and drive sustainable growth."
+                "Install in minutes with easy-fit parts and clear instructions — no tools, no hassle, just ready to roll."
               }
             />
           </div>

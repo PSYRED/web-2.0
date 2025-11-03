@@ -13,14 +13,10 @@ const TwoColumn = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Web Development
-          </h2>
+            BRP I
+          </h2> 
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech, we specialize in creating innovative, user-centric
-            web solutions that help businesses thrive in the digital world. Our
-            comprehensive web development services are designed to meet the
-            unique needs of each client, ensuring a seamless and impactful
-            online presence
+            Heavy-duty steel construction, maximum load capacity, and designed for long-lasting durability. Ideal for work, hauling, and off-road adventures
           </p>
         </div>
       </div>
@@ -30,13 +26,10 @@ const TwoColumn = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Mobile-App development
+            BPR II
           </h2>
           <p className="font-nunito lg:text-lg ">
-            We also create powerful, user-friendly mobile applications that
-            transform how businesses interact with their customers. Our mobile
-            app development services are designed to meet the unique needs of
-            your business, ensuring a seamless and engaging user experience.
+            Lightweight yet strong, modular design for tents, bikes, and cargo. Easy to install and reconfigure for any adventure.
           </p>
         </div>
       </div>
@@ -47,13 +40,10 @@ const TwoColumn = () => {
         </div>
         <div className="lg:w-1/2 flex-col flex justify-center px-4 mx-8 space-y-4">
           <h2 className="lg:text-4xl text-2xl  font-semibold font-nunito">
-            Digital Marketing
+            BPR III
           </h2>
           <p className="font-nunito lg:text-lg ">
-            At Karibu Tech we understand that a successful digital strategy goes beyond just
-            having a great website or mobile app. Our comprehensive digital
-            marketing services are designed to help you connect with your target
-            audience, drive engagement, and achieve your business goals
+            Precision-engineered for exact vehicle fit. Offers customizable features and accessories for a personalized rack experience.
           </p>
         </div>
       </div>

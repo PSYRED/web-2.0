@@ -14,7 +14,7 @@ import Product_one from "./pages/Product_one.jsx";
 import Product_two from "./pages/Product_two.jsx"; 
 import Product_three from "./pages/Product_three.jsx";
 
-import Services from "./pages/Services.jsx";
+import Services from "./pages/Products.jsx";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 import Footer3 from "./components/Footer/Footer3.jsx";
@@ -54,10 +54,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
           <Route path="gallery" element={<Gallery />} />
-          <Route path="services" element={<Services />} />
-          <Route path="services/product_one" element={<Product_one />} />
-          <Route path="services/product_two" element={<Product_two />} />
-          <Route path="services/product_three" element={<Product_three />} />
+          <Route path="products" element={<Services />} />
+          <Route path="products/product_one" element={<Product_one />} />
+          <Route path="products/product_two" element={<Product_two />} />
+          <Route path="products/product_three" element={<Product_three />} />
           <Route path="sign_up" element={<Sign_up />} />
           <Route path="dashboard/Home" element={<Home/>} />
           <Route path="dashboard/Studio" element={<Studio/>} />
