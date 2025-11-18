@@ -45,7 +45,7 @@ const Footer3 = () => {
             <IoReaderOutline size={40} />
           </i>
           <p className=" uppercase font-nunito">Our products</p>
-          <Link to={'services'} className="border border-2 uppercase font-semibold  hover:bg-red-600 transition-colours duration-300 border-white px-4 py-2">
+          <Link to={'products'} className="border border-2 uppercase font-semibold  hover:bg-red-600 transition-colours duration-300 border-white px-4 py-2">
             REad more
           </Link>
         </div>
@@ -55,9 +55,9 @@ const Footer3 = () => {
             <TiContacts size={40} />
           </i>
           <p className=" uppercase font-nunito">Contact Us</p>
-          <button className="uppercase font-semibold border border-2  hover:bg-red-600 transition-colours duration-300 border-white px-4 py-2">
+          <Link to={"contact"} className="uppercase font-semibold border border-2  hover:bg-red-600 transition-colours duration-300 border-white px-4 py-2">
             Reach Out
-          </button>
+          </Link>
         </div>
       </div>
     </div>
