@@ -122,7 +122,7 @@ function App() {
       {/* carousel */}
       <CarouselComp />
 
-      {isOpen && <div className="fixed inset-20 justify-center md:justify-start left-[1rem]  md:inset-16 lg:inset-32   md:w-1/2 lg:w-1/3 rounded-2xl flex items-center  bg-slate-900">
+      {isOpen && <div className=" fadeInDown fixed inset-20 justify-center md:justify-start left-[1rem]  md:inset-16 lg:inset-32   md:w-1/2 lg:w-1/3 rounded-2xl flex items-center  bg-slate-900 transition-all duration-300 ease-in  ${open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'}">
           <form onSubmit={(e)=>handleWaitingList(e,'waitinglist')} className="flex flex-col px-8  md:w-2/3 space-y-10   ">
             <h2 className="text-red-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
               Request a quote
