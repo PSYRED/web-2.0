@@ -94,13 +94,23 @@ function App() {
             />
           </div>
 
-          <div className="md:flex justify-center   font-nunito top-[12rem]    lg:top-[18rem] items-center    fadeInDown text-white absolute lg:px-[5rem] px-[1rem] space-y-10 lg:space-y-0  lg:mb-[7rem]       ">
-            <div className=" flex-col items-center flex  space-y-[3rem]  lg:space-y-[2rem]   ">
-              <h1 className="font-bold  lg:text-5xl     text-2xl ">
+           
+              <h1 className=" absolute
+                top-[10rem] sm:top-[11rem] lg:top-[18rem]
+                w-full
+                flex flex-col lg:flex-row
+                items-center justify-center
+                px-4 sm:px-8 lg:px-[5rem]
+                font-nunito font-bold
+                text-white text-xl
+                 sm:text-3xl md:text-4xl lg:text-5xl
+                space-y-6 lg:space-y-0 lg:space-x-10
+                fadeInDown ">
                 Tough racks for every journey
               </h1>
-            </div>
-          </div>
+             
+            
+          
         </div>
       </div>
 

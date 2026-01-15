@@ -11,7 +11,18 @@ const Modal = ({ handletoggle,isAnimating }) => {
         animate={{ y: 35 }}
         transition={{ duration: 0.5 }}
         div
-        className="absolute font-roboto lg:hidden z-50 items-start pl-4 pt-4 pb-4  inset-5 top-[4rem] bottom-[8rem]      flex flex-col bg-slate-100 bg-gradient-to-b from-white   text-blue-400 space-y-6"
+        className="absolute text-lg lg:hidden z-50
+                    inset-x-4 top-[4rem] bottom-[8rem]
+                    flex flex-col items-center
+                    rounded-2xl
+                    bg-black/95 backdrop-blur-sm
+                    p-2 
+                    font-roboto
+                    text-red-500
+                    shadow-2xl shadow-red-900/40
+                    border border-red-800/40
+                    space-y-2
+                    animate-in fade-in slide-in-from-top-4"
       >
         <Link
           to={"/"}
