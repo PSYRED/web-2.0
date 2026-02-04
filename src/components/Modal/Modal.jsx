@@ -40,7 +40,7 @@ const Modal = ({ handletoggle,isAnimating }) => {
         </Link>
 
         <Link
-          to="services"
+          to="products"
           className="hover:border-b-2 border-b-purple-500 p-2 transition-all duration-100"
           onClick={handletoggle}
         >
@@ -48,21 +48,21 @@ const Modal = ({ handletoggle,isAnimating }) => {
         </Link>
 
         <Link
-          to={"services/product_one"}
+          to={"products/product_one"}
           className="hover:border-b-2 border-b-red-400"
           onClick={handletoggle}
         >
           BRP
         </Link>
         <Link
-          to={"services/product_two"}
+          to={"products/product_two"}
           className="hover:border-b-2 border-b-red-400"
           onClick={handletoggle}
         >
           BRP 2
         </Link>
         <Link
-          to={"services/product_three"}
+          to={"products/product_three"}
           className="hover:border-b-2 border-b-red-400 "
           onClick={handletoggle}
         >

@@ -24,25 +24,24 @@ function App() {
   const [isForming,setIsForm] = useState(false)
 
   const [email, setEmail] = useState("");
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("")
-
-  console.log('Name :',fname)
-
+  const [carMake, setCarMake] = useState("");
+  const [wantBoolean,setWantDiscount] = useState(false)
+  
+ 
   const handleWaitingList = async (e,type)=> {
     e.preventDefault();
     
     try {
       setIsForm(true)
-      console.log('Fields in try...',fname,email,type)
+      console.log('Fields in try...',carMake,type)
 
-      const res = await fetch('http://localhost:3000/api/subscribe',{
+      const res = await fetch('https://psyred-popup.onrender.com/api/subscribe',{
         method:'POST',
         headers:{'Content-Type' :'application/json'},
-        body:JSON.stringify({email,fname,type})
+        body:JSON.stringify({email,carMake,type})
       });
 
-      console.log('Fields after:',email,fname,type)
+      console.log('Fields after:',email,carMake,type)
       const data = await res.json();
 
       if(res.ok) {
@@ -60,9 +59,10 @@ function App() {
 
         alert('Network Error');
       }
-      setFname('');
+      setCarMake('');
       setEmail('')
       setIsForm(false);
+      setWantDiscount(false)
   }
 
   return (
@@ -145,16 +145,7 @@ function App() {
   ✕ 
 </button>
 
-            <input
-              type="text"
-              placeholder="First Name"
-              value={fname}
-              name=""
-              id=""
-              className=" rounded-lg outline-none hover:border-red-700 border-2  border-gray-400  px-3 py-1"
-              required
-              onChange={(e) => setFname(e.target.value)}
-            />
+            
 
 
 
@@ -166,6 +157,33 @@ function App() {
               required
               onChange={(e) => setEmail(e.target.value)}
             />
+
+            <input
+              type="text"
+              placeholder="Car make"
+              value={carMake}
+              name=""
+              id=""
+              className=" rounded-lg outline-none hover:border-red-700 border-2  border-gray-400  px-3 py-1"
+              required
+              onChange={(e) => setCarMake(e.target.value)}
+            />
+
+            <div className="flex space-x-2 items-center ">
+            <label htmlFor="wantDiscount" className="ml-2 font-semibold text-white">
+              Did you want a discount?
+            </label>
+            <input
+              type="checkbox"
+              name="wantDiscount"
+              id="wantDiscount"
+              checked={wantBoolean}
+              onChange={(e) => setWantDiscount(e.target.checked)}
+              className="rounded border-2 border-gray-400"
+            />
+
+            </div>
+
 
             <div className=" justify-center flex lg:justify-start">
               <button
@@ -182,7 +200,7 @@ function App() {
         </div>
         }
 
-      <div className="  flex   lg:items-center flex-col  md:mt-[-3rem]        lg:space-y-0   space-y-[3rem]  bg-black font-nunito text-center text-white  pb-6    ">
+      <div className="flex lg:items-center flex-col  md:mt-[-3rem]        lg:space-y-0   space-y-[3rem]  bg-black font-nunito text-center text-white  pb-6    ">
         <p className="text-3xl py-4 lg:border-b-4 lg:border-red-500 ">
           Book your Bedrack today.
         </p>
