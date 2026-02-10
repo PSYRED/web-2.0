@@ -54,7 +54,12 @@ export default function Login() {
 
     try {
       if (!isLogin) {
-         const {error} = await supabase.auth.signUp({email,password})
+         const {error} = await supabase.auth.signUp({
+          email,password,
+          options :{
+            emailRedirectTo:'https://psyred.com/dashboard/Home'
+          }
+        })
           if (error) {
             if (error.message.includes('User already registered')) {
               toast.info('Account already exists! Please log in instead.')
@@ -62,10 +67,14 @@ export default function Login() {
               setIsLoading(false)
               return
             }
+
+             
+              console.error('Error signing in mayn...:',error.message)
+              return
+            
          
           
-          setIsLogin(true)
-
+           
         return
       }
 
@@ -102,22 +111,31 @@ export default function Login() {
   //    await signOut(auth)
   // }
 
-  // const handleLogin = async ()=> {
-  //   try {
-  //     const userCredential = await signInWithEmailAndPassword(auth,email,password);
-  //     console.log('User Logged in :',userCredential.user.email)
+  const handleLogin = async ()=> {
+    try {
+    const {data,error} = await supabase.auth.signInWithPassword({email,password})
+          if (error) {
+            toast.error(`${error}`)
+            console.error('Error logging in:',error)
+            return
+          }
 
-  //   }
-  //   catch (error){
-  //     console.log('Log in Error: ',error.message)
-  //     if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
-  //       alert("Invalid credentials");
-  //     } else {
-  //       alert("Error: " + error.message);
-  //     }
-  //   }
+          toast.success('Logged in successfully with supabase')
+          navigate('/dashboard/Home');
+          console.log('Login response :',data)
+         
 
-  // }
+    }
+    catch (error){
+      console.log('Log in Error: ',error.message)
+      if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+        alert("Invalid credentials");
+      } else {
+        alert("Error: " + error.message);
+      }
+    }
+
+  }
   useEffect (() => {
     if (session) {
       navigate('/dashboard/Home');
@@ -213,6 +231,17 @@ export default function Login() {
                         {buttonText}
                       </button>
                     </div>
+
+                     <div className="text-center mt-6">
+                      <button
+                        className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={handleLogin}
+                      >
+                        {isLoading ? "Logging in ..." : "Login with E-mail "}
+                      </button>
+                    </div>
+
                     <div className="text-center mt-6">
                       <button
                         className="bg-cyan-700 flex items-center justify-center space-x-4 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
@@ -224,15 +253,7 @@ export default function Login() {
                       </button>
                     </div>
 
-                    {/* <div className="text-center mt-6">
-                      <button
-                        className="bg-cyan-700 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={handleLogin}
-                      >
-                        {isLoading ? "Logging in ..." : "Login with E-mail "}
-                      </button>
-                    </div> */}
+                     
                     
                   </form>
                 </div>
