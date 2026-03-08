@@ -43,11 +43,11 @@ const Form = () => {
   return (
     <>
       <ToastContainer />
-      <div className="lg:pb-8   mb-32  lg:mb-[-5rem]   relative font-nunito  ">
+      <div className="lg:pb-8 text-white   mb-32  lg:mb-[-5rem]   relative font-nunito  ">
         <div className="bg-image-2   " />
-        <div className="lg:mt-4 top-1    lg:pb-12 bg-red-200 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
-          <form className="flex flex-col px-8  md:w-2/3 space-y-10   ">
-            <h2 className="text-purple-500 text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
+        <div className="lg:mt-4 top-1  text-white   lg:pb-12 bg-slate-900 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
+          <form className="flex flex-col text-white px-8  md:w-2/3 space-y-10   ">
+            <h2 className=" text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
               Join the waitlist
             </h2>
 
@@ -87,33 +87,33 @@ const Form = () => {
                 onClick={(e) => handleSubmit(e)} 
 
               
-                className="px-4 py-2 bg-purple-600 focus:bg-black rounded-md text-white font-semibold"
+                className="px-4 py-2 bg-red-400 focus:bg-black rounded-md text-white font-semibold"
               >
                 {isLoading ? "Sending mail..." : "Send mail"}
               </button>
             </div>
           </form>
 
-          <div className="md:w-1/3 flex flex-col items-center  space-y-2 pt-[4rem] pb-[4rem]  ">
+          <div className="md:w-1/3 flex  text-white flex-col items-center  space-y-2 pt-[4rem] pb-[4rem]  ">
             <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+              <h2 className="font-bold text-xl  text-center">
                 Address
               </h2>
-              <p className="text-[#3A3A3A]">KK 314 st, Kigali</p>
+              <p className="">KK 314 st, Kigali</p>
             </div>
 
             <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+              <h2 className="font-bold text-xl  text-center">
                 Email
               </h2>
-              <p className="text-[#3A3A3A]">KaribuTech12@gmail.com</p>
+              <p className="text-white">KaribuTech12@gmail.com</p>
             </div>
 
             <div>
-              <h2 className="font-bold text-xl text-[#3A3A3A] text-center">
+              <h2 className="font-bold text-xl   text-center">
                 Phone
               </h2>
-              <p className="text-[#3A3A3A]">+2507848 24 525</p>
+              <p className="">+2507848 24 525</p>
             </div>
           </div>
         </div>

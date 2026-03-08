@@ -12,23 +12,7 @@ import Header from "../sections/OurServices/Header";
 import CardNoBtn from "../components/Card/CardNoBtn";
 import paul from './../assets/paul.jpg'
 const About = () => {
-  const testimonies = [
-    {
-      name: "Kabalisa Paul",
-      mainImage: paul,
-      title: "Founder",
-    },
-    {
-      name: "Kabalisa Paul",
-      mainImage: paul,
-      title: "Developer",
-    },
-    {
-      name: "Kabalisa",
-      mainImage: paul,
-      title: "Business Analyst",
-    },
-  ];
+   
   return (
     <>
       {/* header image */}
@@ -37,25 +21,25 @@ const About = () => {
 
       <div className=" w-full pt-[4rem] bg-slate-100 bg-gradient-to-b from-white">
         <div className="md:flex justify-evenly   md:h-[30rem]">
-          <div className=" font-nunito md:w-[37rem] pl-6 md:h-[29rem]">
+          <div className=" font-nunito md:w-[37rem] pl-6 md:h-[15rem]">
             {/* </div> */}
             <h1 className="mt-[0.5rem] text-[1.8rem]  font-semibold">
               Welcome to <span className="text-red-700">Psyred</span>
             </h1>
-            <p className="mt-[1.2rem]">
+            <p className="mt-[1.2rem] text-lg">
               At Psyred, we are passionate about crafting exceptional overlanding equipment that drives adventure and reliability across America's most challenging landscapes. Based in the Rocky Mountains, our engineering team is dedicated to harnessing the power of innovative design to transform your truck into the ultimate adventure companion.
 
 
             </p>
-            <p className="mt-[1.2rem] font-nunito">
+            {/* <p className="mt-[1.2rem] font-nunito">
               Founded in 2022{" "}
               <span className="text-red-700 font-semibold ">
                 Psyred
               </span>{" "}
           is a dynamic team of skilled engineers, manufacturing experts, and adventure enthusiasts. Our diverse expertise spans various terrains and industries, enabling us to understand the unique challenges and opportunities within the North American overlanding market. We are committed to excellence, innovation, and continuous improvement, ensuring we stay at the forefront of the ever-evolving outdoor equipment landscape.
-            </p>
+            </p> */}
           </div>
-          <div className=" md:h-[23rem] xl:w-[32rem] md:w-[30rem] sm:w-[10rem] sm:h-[40rem] block justify-end px-4 py-2 ">
+          {/* <div className=" md:h-[23rem] xl:w-[32rem] md:w-[30rem] sm:w-[10rem] sm:h-[40rem] block justify-end px-4 py-2 ">
             <span className="flex justify-end ">
               <img
                 src="https://i.ibb.co/ggfVWRm/10001.jpg"
@@ -69,7 +53,7 @@ const About = () => {
                 Innovation Lab
               </p>
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -82,9 +66,10 @@ const About = () => {
             <div className="">
               <p className="pt-7 text-white font-bold text-3xl">Our mission</p>
               <p className="text-white max-w-sm">
-                Our mission is to empower African businesses and organizations
-                by providing cutting-edge web applications that enhance
-                efficiency, engagement, and profitability
+                To design rugged, reliable, and intelligently engineered products that simplify everyday
+work for tradespeople, adventurers, and builders. We’re committed to delivering secure,
+weather‑ready solutions that protect what matters, while providing an exceptional
+customer experience as we grow to serve our first 1,000 customers and beyond.
               </p>
             </div>
           </div>
@@ -98,8 +83,8 @@ const About = () => {
                 Our vision
               </p>
               <p className="text-white max-w-sm">
-                Our Vision To be the leading digital agency in Africa, driving
-                transformation and innovation across the continent.
+                To become the most trusted name in innovative cargo and utility solutions — a brand
+known for durability, smart technology, and user‑first design
               </p>
             </div>
           </div>
@@ -113,10 +98,8 @@ const About = () => {
                 Core values
               </p>
               <p className="text-white max-w-sm">
-                Our Core-value is client centric design.Our clients are at the
-                heart of our business.We prioritize understanding their needs,
-                goals, and challenges to provide tailored solutions that drive
-                their success.
+                Craftsmanship and design for reliability, our products are made by both machines and
+humans with the goal of fulfilling the customer’s need and build trust
               </p>
             </div>
           </div>
@@ -124,7 +107,7 @@ const About = () => {
       </div>
 
       {/* Why choose us */}
-      <div className="bg-slate-100">
+      <div className="bg-slate-100 pb-[12rem] ">
 
       <h1 className="font-nunito text-center text-5xl text-black font-bold py-[5rem]">
         Why choose us
@@ -164,7 +147,7 @@ const About = () => {
       </div>
 
       {/* Team members  */}
-      <div className="bg-[#F3F5F5] lg:px-[8rem] px-[1rem] mt-[4rem] pb-[5rem]">
+      {/* <div className="bg-[#F3F5F5] lg:px-[8rem] px-[1rem] mt-[4rem] pb-[5rem]">
         <h2 className="text-center text-5xl font-semibold py-8 text-red-700 font-nunito   ">
           Meet the team
         </h2>
@@ -194,7 +177,7 @@ const About = () => {
             );
           })}
         </Carousel>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -89,6 +89,27 @@ const [model,setModel] = useState('')
            
           
           <div className=''>Model</div>
+
+          
+{/* 
+          <select name="brand"  className='rounded-md' id="">
+            <option value="" disabled selected hidden>Select Brand</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Ford">Ford</option>
+            <option value="GMC">GMC</option>
+          </select> */}
+
+          <div>BRP Color</div>
+
+           <select name="color" onChange={(e)=> setColor(e.target.value)}  className='rounded-md' id="">
+            <option value="" disabled selected hidden>Select BRP color</option>
+            <option value="Artic armor">White</option>
+            <option value="Blackhawk armor">Black</option>
+            <option value="Silver-trail armor">Grey</option>
+          </select>
+
+     
+
           <select value={model} disabled={!brand || Object.keys(brandData[brand]?.models || {}).length === 0 } onChange={(e)=> setModel(e.target.value)}
           className='rounded-md' id="">
             
@@ -111,23 +132,8 @@ const [model,setModel] = useState('')
             ))}
           </select>
 
-          <div>BRP Color</div>
-
-           <select name="color" onChange={(e)=> setColor(e.target.value)}  className='rounded-md' id="">
-            <option value="" disabled selected hidden>Select BRP color</option>
-            <option value="Artic armor">White</option>
-            <option value="Blackhawk armor">Black</option>
-            <option value="Silver-trail armor">Grey</option>
-          </select>
-
-          <div>Attachment</div>
-
-           <select name="brand"  className='rounded-md' id="">
-            <option value="" disabled selected hidden>Select Attachement</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Ford">Ford</option>
-            <option value="GMC">GMC</option>
-          </select>
+ 
+           
           <div className=' pt-6'>
 
             <button 

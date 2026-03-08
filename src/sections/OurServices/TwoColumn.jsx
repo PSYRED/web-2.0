@@ -16,7 +16,13 @@ const TwoColumn = () => {
             BRP I
           </h2> 
           <p className="font-nunito lg:text-lg ">
-            Heavy-duty steel construction, maximum load capacity, and designed for long-lasting durability. Ideal for work, hauling, and off-road adventures
+            A fresh new look to bed covers and how they are used. The BRP comes with a
+hidden storage that is unlocked by the touch of a key. The key used is an RFID
+tag encoded with a unique, tamper‑resistant identifier that ensures only
+authorized access. Its sealed design is built to withstand harsh weather and
+rugged environments, keeping your cargo secure from theft and the elements.
+The BRP is customizable for every person’s uniques need.
+
           </p>
         </div>
       </div>
@@ -29,7 +35,14 @@ const TwoColumn = () => {
             BPR II
           </h2>
           <p className="font-nunito lg:text-lg ">
-            Lightweight yet strong, modular design for tents, bikes, and cargo. Easy to install and reconfigure for any adventure.
+            Still in development process, the BRP 2 builds on the original design with
+expanded storage capacity and the same secure, touch‑activated locking
+system. The key used is an RFID tag encoded with a unique, tamper‑resistant
+identifier that ensures only authorized access. Its sealed design is built to
+withstand harsh weather and rugged environments, keeping your cargo
+protected from theft and the elements. The BRP 2 also features raised side
+railings for hanging tools and gear, along with an integrated third brake light to
+enhance visibility and road safety. Sign up for the waiting list.
           </p>
         </div>
       </div>
@@ -43,7 +56,8 @@ const TwoColumn = () => {
             BPR III
           </h2>
           <p className="font-nunito lg:text-lg ">
-            Precision-engineered for exact vehicle fit. Offers customizable features and accessories for a personalized rack experience.
+            Larger and more robust to weather conditions and heavy materials, BRP III has
+the capability to store and hang tools at a larger extent. Available in 2027.
           </p>
         </div>
       </div>

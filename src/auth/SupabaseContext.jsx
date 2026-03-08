@@ -38,10 +38,10 @@ export const AuthProvider = ({children}) => {
 
   },[]);
 
-  useEffect(()=> {
-    console.log('Session Data :',session)
+  // useEffect(()=> {
+  //   // console.log('Session Data :',session)
 
-  },[session])
+  // },[session])
 
   
     const handleLogout = async () => {
