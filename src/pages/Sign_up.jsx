@@ -22,6 +22,7 @@ export default function Login() {
   
   
   const navigate = useNavigate(); 
+  
   const {session,signOut} = useAuth()
   
 
@@ -87,7 +88,8 @@ export default function Login() {
           return     
          } 
 
-         toast.success('Account created')
+         toast.success('Account created. Please verfiy email')
+         navigate('/pages/verify_email')
         
       }
       catch (err) {

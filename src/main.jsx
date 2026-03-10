@@ -24,7 +24,16 @@ import { AuthProvider } from "./auth/SupabaseContext.jsx";
 import Checkout from "./dashboard/Checkout.jsx";
 import Home from "./dashboard/Home.jsx";
 import { Studio } from "./dashboard/Studio.jsx";
+import Verify_email from "./pages/verify_email.jsx";
+
+  
+
+  
 const Layout = () => {
+
+
+   
+
   return (
     <>
           
@@ -63,6 +72,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="dashboard/Studio" element={<Studio/>} />
 
           <Route path="dashboard/Checkout" element={<Checkout/>} />
+          <Route path="pages/verify_email" element={<Verify_email/>}/>
           
         </Route>
       </Routes>

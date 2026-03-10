@@ -1,6 +1,6 @@
 import { RiGlobalLine } from "react-icons/ri";
 import { IoIosTimer } from "react-icons/io";
-import { FaFlagUsa } from "react-icons/fa6";
+import { FaLightbulb } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { MdDeliveryDining } from "react-icons/md";
 import { Carousel } from "react-responsive-carousel";
@@ -11,6 +11,9 @@ import Card from "../components/Card/Card";
 import Header from "../sections/OurServices/Header";
 import CardNoBtn from "../components/Card/CardNoBtn";
 import paul from './../assets/paul.jpg'
+import { CiSettings } from "react-icons/ci";
+import { FaShieldAlt } from "react-icons/fa";
+
 const About = () => {
    
   return (
@@ -20,8 +23,8 @@ const About = () => {
       {/* header text  */}
 
       <div className=" w-full pt-[4rem] bg-slate-100 bg-gradient-to-b from-white">
-        <div className="md:flex justify-evenly   md:h-[30rem]">
-          <div className=" font-nunito md:w-[37rem] pl-6 md:h-[15rem]">
+        <div className="md:flex justify-evenly  pb-10   ">
+          <div className=" font-nunito md:w-[50%]   pl-6  md:h-[15rem]">
             {/* </div> */}
             <h1 className="mt-[0.5rem] text-[1.8rem]  font-semibold">
               Welcome to <span className="text-red-700">Psyred</span>
@@ -57,9 +60,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className=" bg-red-900 font-nunito w-full   ">
-        <div className="md:flex-row flex flex-col  md:justify-around lg:space-y-0 space-y-4  items-center px-[2rem]   h-full md:pt-20 lg:py-10  lg:space-x-8 py-8  mx-auto">
-          <div className="    xl:h-36 flex items-center space-x-6 min-h-[10rem]   ">
+    
+      <div className="md:flex-row md:h-[50vh] bg-red-900  flex flex-col  md:justify-around lg:space-y-0 space-y-4  items-center px-[2rem]   h-full md:pt-20 lg:py-10  lg:space-x-8 py-8  mx-auto">
+          <div className="xl:h-36 flex items-center space-x-6 min-h-[10rem]   ">
             <h1 className=" text-4xl font-semibold text-white outline outline-1 p-4 rounded-md">
               M
             </h1>
@@ -104,7 +107,7 @@ humans with the goal of fulfilling the customer’s need and build trust
             </div>
           </div>
         </div>
-      </div>
+      
 
       {/* Why choose us */}
       <div className="bg-slate-100 pb-[12rem] ">
@@ -114,33 +117,38 @@ humans with the goal of fulfilling the customer’s need and build trust
       </h1>
       <div className="md:flex md:mt-[-4rem]   font-nubito  xl:justify-evenly h-full w-full gap-2 p-5 xl:pr- xl:pl-20 transition duration-500">
         <CardNoBtn
-          title={"Local Expertise "}
+          title={"Innovation is the goal"}
           content={
-            "With a deep understanding of the African market, we create solutions that are culturally relevant and resonate with your audience"
+            `Psyred goal is to build products with innovation at heart, with a product designed 
+            specifically for a customer's needs, innovation brings convenience.`
           }
           icon={
-            <FaFlagUsa 
+        <FaLightbulb 
  className="text-white text-5xl group-hover:text-black   transition-colors duration-500 delay-150 " />
           }
         />
 
         <CardNoBtn
-          title={"Client Centric Approach"}
+          title={"Fully customizable"}
           content={
-            "Your success is our priority. We work closely with you throughout the project, ensuring your vision is realized and your expectations are exceeded"
+            `Designing for everyday storage, construction or agriculture. Psyred builds for all
+needs and to benefit all.`
           }
           icon={
-            <FaUser className="text-white text-5xl group-hover:text-black transition-colors duration-500 delay-150 " />
+            <CiSettings className="text-white text-5xl group-hover:text-black transition-colors duration-500 delay-150 " />
           }
         />
 
         <CardNoBtn
-          title={"Proven Track Record"}
+          title={"Reliability"}
           content={
-            "Our portfolio showcases a wide range of successful projects that demonstrate our ability to deliver high-quality, impactful digital solutions"
+            `Our products go through quality inspection to ensure no defects before shipping.
+Our products are built to last years without fail. This is made possible through our
+skilled personnel and our premium material selection.`
           }
           icon={
-            <IoIosTimer className="text-white text-5xl group-hover:text-black transition-colors duration-500 delay-150 " />
+            <FaShieldAlt 
+ className="text-white text-5xl group-hover:text-black transition-colors duration-500 delay-150 " />
           }
         />
       </div>

@@ -8,13 +8,18 @@ import Card from "./components/Card/Card";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import Button1 from "./components/Button/Button1";
 import { RotatingLines } from "react-loader-spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CarouselComp from "./components/Carousel/Carousel";
 
 import trucks from "./assets/psyred_assets/shot4.png";
 import Form from "./components/Form/Form";
 
 import { ToastContainer,toast } from "react-toastify";
+
+import { useAuth } from "./auth/SupabaseContext";
+import {useNavigate } from "react-router-dom";
+
+
 function App() {
    
 
@@ -26,6 +31,18 @@ function App() {
   const [email, setEmail] = useState("");
   const [carMake, setCarMake] = useState("");
   const [wantBoolean,setWantDiscount] = useState(false)
+
+
+  const {session,signOut} = useAuth()
+   const navigate = useNavigate(); 
+  
+  
+
+  useEffect(()=> {
+    if (session) {
+      navigate('dashboard/Home');
+    }
+  },[session,navigate])
   
  
   const handleWaitingList = async (e,type)=> {
@@ -95,16 +112,16 @@ function App() {
           </div>
 
            
-              <h1 className=" absolute
-                top-[10rem] sm:top-[11rem] lg:top-[18rem]
+              <h1 className=" absolute 
+                top-[5rem] sm:top-[11rem] lg:top-[18rem]
                 w-full
-                flex flex-col lg:flex-row
-                items-center justify-center
+                text-center
+              
                 px-4 sm:px-8 lg:px-[5rem]
                 font-nunito font-bold
-                text-white text-xl
+                text-white text-4xl
                  sm:text-3xl md:text-4xl lg:text-5xl
-                space-y-6 lg:space-y-0 lg:space-x-10
+                
                 fadeInDown ">
                 Tough racks for every journey
               </h1>
@@ -227,7 +244,7 @@ function App() {
       </div>
 
       {/* Our services */}
-      <div className=" w-full lg:pt-[8rem] pt-[4rem] text-white   lg:mt-0 lg:border-b  lg:border-b-red-400  mb-0 lg:px-10 px-4  pb-24 bg-gradient-to-b  bg-black   ">
+      <div className=" w-full lg:pt-[8rem] pt-[4rem] text-white   lg:mt-0 border-b  border-b-red-400  mb-0 lg:px-10 px-4  pb-24 bg-gradient-to-b  bg-black   ">
         <div className=" flex flex-col items-center  ">
           <h3 className="lg:text-4xl text-2xl text-center max-w-screen-lg font-nunito pb-4 mb-4 font-semibold justify-center ">
             Why the <span className="text-red-400">BED RACK PROJECT?</span>

@@ -48,7 +48,7 @@ const Form = () => {
         <div className="lg:mt-4 top-1  text-white   lg:pb-12 bg-slate-900 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
           <form className="flex flex-col text-white px-8  md:w-2/3 space-y-10   ">
             <h2 className=" text-center lg:text-left font-nunito text-2xl font-semibold font-roboto">
-              Join the waitlist
+              Contact Us
             </h2>
 
             <input
@@ -57,9 +57,10 @@ const Form = () => {
               value={fname}
               name=""
               id=""
-              className=" rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
+              className="  rounded-lg outline-none hover:border-purple-400 border-2  border-gray-400  px-3 py-1"
               required
               onChange={(e) => setFname(e.target.value)}
+              
             />
 
             <input
@@ -97,23 +98,23 @@ const Form = () => {
           <div className="md:w-1/3 flex  text-white flex-col items-center  space-y-2 pt-[4rem] pb-[4rem]  ">
             <div>
               <h2 className="font-bold text-xl  text-center">
-                Address
+                Address:
               </h2>
-              <p className="">KK 314 st, Kigali</p>
+              <p className="">281 Alfred st,Biddeford ME 04005</p>
             </div>
 
             <div>
               <h2 className="font-bold text-xl  text-center">
-                Email
+                Email:
               </h2>
-              <p className="text-white">KaribuTech12@gmail.com</p>
+              <p className="text-white">psyredofficial@gmail.com</p>
             </div>
 
             <div>
               <h2 className="font-bold text-xl   text-center">
-                Phone
+                Phone:
               </h2>
-              <p className="">+2507848 24 525</p>
+              <p className="">+1(978) 225 0472</p>
             </div>
           </div>
         </div>

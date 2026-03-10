@@ -14,7 +14,7 @@ const Contact = () => {
           <div className=" w-3/4 h-72 mx-auto align-center pt-24 text-center  ">
             <span className="">
               <h1 className=" pb-10 text-white text-[2.7rem] font-bold  w-100 h-16 text-6xl mt-4">
-                Contact Us{" "}
+                Contact Us{""}
               </h1>
             </span>
             <span>
@@ -37,32 +37,32 @@ const Contact = () => {
               business, you can always email us or call us via the below
               details. We’ll reply within 24 hours.
             </p>
-            <div className="flex flex-col  items-start text-black  container mx-auto">
-              <div className=" md:w-[40rem]  xl:h-36 flex items-center space-x-6  ">
+            <div className="flex flex-col space-y-5 md:space-y-0 items-start text-black  container mx-auto">
+              <div className=" md:w-[40rem]  xl:h-36 flex items-center space-x-6 md:space-y-0  ">
                 <h1 className=" text-4xl font-semibold  outline outline-1 p-4 rounded-md">
-                  <CiLocationOn />
+                  <FaPhoneAlt />
                 </h1>
-                <div>
-                  <p className="pt-7 font-roboto font-bold ">Visit us</p>
-                  <p className=" max-w-sm">
+                <div className=" flex items-start">
+                  <p className=" font-roboto font-bold ">Reach us by phone: (978) 225 0472</p>
+                  {/* <p className=" max-w-sm">
                     Kigali City,Kicukiro 314st. We meet our customers’ demands
                     for a personal & profesional service by offering innovative
                     digital solutions.
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
               <div className=" md:w-[40rem] xl:h-36 flex items-center space-x-4   ">
                 <h1 className=" text-4xl font-semibold   outline outline-1 px-5 py-4 rounded-md">
-                  <FaPhoneAlt />
+                    <CiLocationOn />
                 </h1>
                 <div>
-                  <p className="pt-7 font-bold ">Call us on</p>
-                  <p className=" max-w-sm">
+                  <p className="font-bold ">Address: 281 alfred st,Biddeford ME 04005</p>
+                  {/* <p className=" max-w-sm">
                     We proactively and constantly look for new possibilities.
                     Therefore, an important part of our vision is to attract &
                     retain.{" "}
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -71,11 +71,11 @@ const Contact = () => {
                   <CiMail />
                 </h1>
                 <div>
-                  <p className="pt-7 font-bold font-roboto ">Mail us on</p>
-                  <p className=" max-w-sm">
+                  <p className=" font-bold font-roboto ">Mail us on : psyredofficial@gmail.com</p>
+                  {/* <p className=" max-w-sm">
                     We meet our customers’ demands for a personal & profesional
                     service by offering innovative supply chain solutions.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

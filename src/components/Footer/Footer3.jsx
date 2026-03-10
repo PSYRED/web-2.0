@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 const Footer3 = () => {
   return (
     <div className="bg-black  p-[5rem] text-white">
-      <div className="flex md:flex-row flex-col items-center md:space-x-10 space-x-0 space-y-10 md:space-y-0  justify-around  ">
+      <div className="flex md:flex-row  flex-col items-center md:space-x-10 space-x-0 space-y-10 md:space-y-0  justify-around  ">
         
-        <Link to={'about'}className="flex  flex-col items-center space-y-[1rem]">
+        <Link to={'about'}className="flex  flex-col items-center space-y-[2rem]">
           <i className="text-white font-nunito font-semibold text-2xl md:h-10 h-0">
             PSYRED
           </i>
