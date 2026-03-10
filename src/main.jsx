@@ -24,7 +24,7 @@ import { AuthProvider } from "./auth/SupabaseContext.jsx";
 import Checkout from "./dashboard/Checkout.jsx";
 import Home from "./dashboard/Home.jsx";
 import { Studio } from "./dashboard/Studio.jsx";
-import Verify_email from "./pages/verify_email.jsx";
+import Verify_email from "./pages/Verify_email.jsx";
 
   
 
