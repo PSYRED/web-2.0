@@ -3,12 +3,14 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import Form from "../components/Form/Form";
+import headerImg from '../assets/10003.jpg?format=webp&quality=80'
+
 
 const Contact = () => {
   return (
     <>
       {/* header image */}
-      <div className="backgroundImage -z-10 bg-cover bg-bottom relative bg-blue-600 ">
+      <div className="backgroundImage -z-10 bg-cover bg-bottom relative bg-blue-600 " style={{backgroundImage:`url(${headerImg})`}}>
         <div className="bg-e-global-color-1046ecd transition-all -z-20 duration-300 overlay" />
         <div className="lg:pt-52 pt-34  ">
           <div className=" w-3/4 h-72 mx-auto align-center pt-24 text-center  ">

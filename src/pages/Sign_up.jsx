@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";   
-import login from "../../src/assets/psyred_assets/shot5.png";
+import login from "../../src/assets/psyred_assets/shot5.png?format=webp&quality=80";
 import fabIcon from "../../src/assets/psyred_assets/official_logo.png";
 
 import GoogleLoginBtn from "../firebase/googleLoginBtn";

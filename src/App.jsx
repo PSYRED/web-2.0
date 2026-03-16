@@ -3,7 +3,7 @@ import "./App.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { FaToolbox } from "react-icons/fa";
 import { IoIosCheckmark } from "react-icons/io";
-import corpo4 from './assets/psyred_assets/shot2.png'
+import corpo4 from './assets/psyred_assets/shot2.png?format=webp&quality=80'
 import Card from "./components/Card/Card";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import Button1 from "./components/Button/Button1";
@@ -11,7 +11,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import CarouselComp from "./components/Carousel/Carousel";
 
-import trucks from "./assets/psyred_assets/shot4.png";
+import trucks from "./assets/psyred_assets/shot4.png?format=webp&quality=80";
 import Form from "./components/Form/Form";
 
 import { ToastContainer,toast } from "react-toastify";
@@ -105,9 +105,9 @@ function App() {
             <img
               src={corpo4}
               className="lg:h-[100vh] h-[50vh] md:w-full lg:w-full lg:object-cover lg:object-right-bottom object-cover object-center w-full  "
-              alt=""
-              srcset=""
+              fetchPriority="high"
               onLoad={() => setIsLoading(true)}
+              
             />
           </div>
 
@@ -201,7 +201,7 @@ function App() {
 
             </div>
 
-
+ 
             <div className=" justify-center flex lg:justify-start">
               <button
                 type="submit" 
@@ -236,9 +236,7 @@ function App() {
       <div className="lg:mt-0      ">
         <img
           src={trucks}
-          className="lg:h-[100vh] h-[100vh]  w-full   -z-40   object-cover object-bottom    
-
-                      "
+          className="lg:h-[100vh] h-[100vh]  w-full   -z-40   object-cover object-bottom"
           alt=""
         />
       </div>

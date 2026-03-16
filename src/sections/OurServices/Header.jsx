@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Header = ({title}) => {
+const Header = ({title,imgLink}) => {
   return (
     <>
-      <div className="backgroundImage  -z-10 bg-cover  relative bg-purple-300 ">
+      <div className="backgroundImage  -z-10 bg-cover  relative bg-purple-300 " style={{backgroundImage:`url(${imgLink})`}}>
         <div className=" transition-all -z-20 duration-300 overlay" />
         <div className="pt-14 lg:pt-0  ">
           <div className=" w-3/4 h-72 mx-auto align-center pt-24 text-center  ">

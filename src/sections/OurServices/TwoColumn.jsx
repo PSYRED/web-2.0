@@ -1,8 +1,8 @@
 import React from 'react'
 import corpo from '../../assets/corpo.jpg'
-import webdev from '../../assets/webdev.jpg'
-import mobdev from '../../assets/mobiledev.jpg'
-import digital from '../../assets/digitalmark.jpg'
+import webdev from '../../assets/webdev.jpg?format=webp&quality=80'
+import mobdev from '../../assets/mobiledev.jpg?format=webp&quality=80'
+import digital from '../../assets/digitalmark.jpg?format=webp&quality=80'
 
 const TwoColumn = () => {
   return (

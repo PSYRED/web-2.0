@@ -13,13 +13,13 @@ import CardNoBtn from "../components/Card/CardNoBtn";
 import paul from './../assets/paul.jpg'
 import { CiSettings } from "react-icons/ci";
 import { FaShieldAlt } from "react-icons/fa";
-
+import headerImg from '../assets/10003.jpg?format=webp&quality=80'
 const About = () => {
    
   return (
     <>
       {/* header image */}
-      <Header title={"About us"} />
+      <Header title={"About us"} imgLink={headerImg} />
       {/* header text  */}
 
       <div className=" w-full pt-[4rem] bg-slate-100 bg-gradient-to-b from-white">

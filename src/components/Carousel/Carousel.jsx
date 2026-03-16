@@ -1,29 +1,29 @@
 import React from 'react'
 import { Carousel } from "react-responsive-carousel";
-import ship2 from "../../assets/psyred_assets/RAM.png";
-import air from "../../assets/psyred_assets/GMC.png";
-import trucks from "../../assets/psyred_assets/shader.png";
+import ship2 from "../../assets/psyred_assets/RAM.png?format=webp&quality=70";
+import air from "../../assets/psyred_assets/GMC.png?format=webp&quality=70";
+import trucks from "../../assets/psyred_assets/shader.png?format=webp&quality=70";
 
+const slide = [
+  {
+    text: "Bienvenue chez Grace Global Logistics ",
+    pic: air,
+  },
+  {
+    text: "Bienvenue chez Grace Global Logistics",
+    pic: trucks,
+  },
+
+  {
+    text: "Bienvenue chez Grace Global Logistics ",
+    pic: ship2,
+  },
+
+   
+];
 
 const CarouselComp = () => {
 
-    const slide = [
-      {
-        text: "Bienvenue chez Grace Global Logistics ",
-        pic: air,
-      },
-      {
-        text: "Bienvenue chez Grace Global Logistics",
-        pic: trucks,
-      },
-
-      {
-        text: "Bienvenue chez Grace Global Logistics ",
-        pic: ship2,
-      },
-
-       
-    ];
   return (
     <div className="relative h-[65vh] lg:h-full   ">
   
@@ -40,13 +40,11 @@ const CarouselComp = () => {
         {slide.map((item) => {
           return (
             <>
-              <div className="lg:mt-0      ">
+              <div className="lg:mt-0">
                 <img
                   src={item.pic}
-                  className="lg:h-[100vh] h-[100vh]     -z-40   object-cover object-bottom    
-
-                      "
-                  alt=""
+                  className="lg:h-[100vh] h-[100vh] -z-40 object-cover object-bottom"
+                  
                 />
 
                 
