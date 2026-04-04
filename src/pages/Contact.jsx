@@ -45,7 +45,7 @@ const Contact = () => {
                   <FaPhoneAlt />
                 </h1>
                 <div className=" flex items-start">
-                  <p className=" font-roboto font-bold ">Reach us by phone: (978) 225 0472</p>
+                  <p className=" font-roboto font-bold ">Reach our sales department: (978) 225 0472</p>
                   {/* <p className=" max-w-sm">
                     Kigali City,Kicukiro 314st. We meet our customers’ demands
                     for a personal & profesional service by offering innovative
@@ -92,28 +92,28 @@ const Contact = () => {
               <p className="pt-4">These are our office working hours </p>
               <div className="justify-between flex mt-4 border-b-2 p-4">
                 <p>Monday</p>
-                <p>9:00am-17.00 pm </p>
+                <p>2:00pm-9:00pm </p>
               </div>
-              <div className="justify-between flex mt-4 border-b-2 p-4">
+              {/* <div className="justify-between flex mt-4 border-b-2 p-4">
                 <p>Tuesday</p>
-                <p>9:00am-17.00 pm </p>
+                <p>2:00pm-9:00pm </p>
               </div>
               <div className="justify-between flex mt-4 border-b-2 p-4">
                 <p>Wednesday</p>
-                <p>9:00am-17.00 pm </p>
-              </div>
+                <p>2:00pm-9:00pm </p>
+              </div> */}
               <div className="justify-between flex mt-4 border-b-2 p-4">
                 <p>Thursday</p>
-                <p>9:00am-17.00 pm </p>
+                <p>2:00pm-9:00pm </p>
               </div>
               <div className="justify-between flex mt-4 border-b-2 p-4">
                 <p>Friday</p>
-                <p>9:00am-17.00 pm </p>
+                <p>2:00pm-9:00pm </p>
               </div>
-              <div className="justify-between flex mt-4   p-4">
+              {/* <div className="justify-between flex mt-4   p-4">
                 <p>Sat & Sunday</p>
                 <p className=" text-red-500">Closed</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

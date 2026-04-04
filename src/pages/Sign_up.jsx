@@ -80,7 +80,7 @@ export default function Login() {
           }
         })
 
-        // console.log("SIGNUP RESPONSE:", response)
+        // console.log("SIGNUP RESPONSE:", data)
           
         if (error) {
           console.error('Error signing in mayn...:',error.message)
@@ -102,9 +102,9 @@ export default function Login() {
       }
   }
 
-  // const handleSignOut = async ()=> {
-  //    await signOut(auth)
-  // }
+  const handleSignOut = async ()=> {
+     await signOut(auth)
+  }
 
    
   useEffect (() => {
@@ -205,7 +205,7 @@ export default function Login() {
                     <div class="flex-grow border-t border-gray-300"></div>
                     <span class="mx-4 text-gray-500">OR</span>
                     <div class="flex-grow border-t border-gray-300"></div>
-                </div>
+                  </div>
 
 
 
