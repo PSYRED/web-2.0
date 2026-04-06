@@ -24,7 +24,7 @@ import { AuthProvider } from "./auth/SupabaseContext.jsx";
 import Checkout from "./dashboard/Checkout.jsx";
 import Home from "./dashboard/Home.jsx";
 import { Studio } from "./dashboard/Studio.jsx";
-import Callback from "./auth/callback.jsx";
+import Callback from "./auth/Callback.jsx";
 
   
 
