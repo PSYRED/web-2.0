@@ -48,7 +48,7 @@ export default function Login() {
    
    
     // Basic form validation
-    if (!email.trim() || !password.trim()) {
+    if (!email.trim()) {
       toast.error("Email and password are required.");
       setIsLoading(false)
       return;
