@@ -76,7 +76,7 @@ export default function Login() {
         const {data,error} = await supabase.auth.signUp({
           email,password,
           options :{
-            emailRedirectTo:'https://psyred.com/dashboard/Home'
+            emailRedirectTo:'https://psyred.com/pages/verify_email'
           }
         })
 
