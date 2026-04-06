@@ -32,7 +32,7 @@ export default function Login() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin + '/dashboard/Home', 
+      redirectTo: window.location.origin + 'auth/Callback', 
     },
   });
 
@@ -42,7 +42,6 @@ export default function Login() {
   
 
   const handleEmailSignUp= async (e) => {
-    console.log('Login :',isLogin)
     e.preventDefault();
     setError("");
     setIsLoading(true)
@@ -60,27 +59,27 @@ export default function Login() {
 
       // Log-in with password
 
-      const {data:loginData,error:loginError} = await supabase.auth.signInWithPassword({email,password})
+      // const {data:loginData,error:loginError} = await supabase.auth.signInWithPassword({email,password})
                 
-       if (!loginError) {
-        console.log('Login response :',loginData)
-        toast.success('Logged in successfully with supabase')
-        navigate('/dashboard/Home');
-        setIsLogin(true) 
-        setIsLoading(false)    
-        return
-        };
+      //  if (!loginError) {
+      //   console.log('Login response :',loginData)
+      //   toast.success('Logged in successfully with supabase')
+      //   navigate('/dashboard/Home');
+      //   setIsLogin(true) 
+      //   setIsLoading(false)    
+      //   return
+      //   };
                 
       // Sign-up with e-mail verification
        
         const {data,error} = await supabase.auth.signUp({
           email,password,
           options :{
-            emailRedirectTo:'https://psyred.com/pages/verify_email'
+            emailRedirectTo:'https://psyred.com/auth/Callback'
           }
         })
 
-        // console.log("SIGNUP RESPONSE:", data)
+        console.log("SIGNUP RESPONSE:", data)
           
         if (error) {
           console.error('Error signing in mayn...:',error.message)
@@ -88,8 +87,8 @@ export default function Login() {
           return     
          } 
 
-         toast.success('Account created. Please verfiy email')
-         navigate('/pages/verify_email')
+         toast.success('Signing in...')
+         navigate('/auth/Callback')
         
       }
       catch (err) {
@@ -165,20 +164,20 @@ export default function Login() {
                       />
                     </div>
                     <div className="relative w-full mb-3">
-                      <label
+                      {/* <label
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
                       >
                         Password
-                      </label>
-                      <input
+                      </label> */}
+                      {/* <input
                         type="password"
                         className="border border-gray-200 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
-                      />
+                      /> */}
                     </div>
-                    <div>
+                    {/* <div>
                       <label className="inline-flex items-center cursor-pointer">
                         <input
                           id="customCheckLogin"
@@ -189,7 +188,7 @@ export default function Login() {
                           Remember me
                         </span>
                       </label>
-                    </div>
+                    </div> */}
                     <div className="text-center mt-6">
                       <button
                         disabled={isLoading}

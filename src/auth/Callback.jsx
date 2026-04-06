@@ -1,4 +1,9 @@
-const Verify_email = ()=>{
+import { supabase } from "../lib/supabaseClient"
+
+const Callback = ()=>{
+  // const handleAuth ={
+  //   const {data,auth }= await supabase.auth.getSession()
+  // }
   return (
     <>
   <div
@@ -41,7 +46,7 @@ const Verify_email = ()=>{
       <div class="bg-base-100 bg-slate-900 font-nunito  shadow-base-300/20 z-1 w-full space-y-6 rounded-xl p-6 shadow-md sm:max-w-md lg:p-8">
         
         <div>
-          <h3 class="text-base-content mb-1.5 text-2xl font-nunito">Verify your email</h3>
+          <h3 class="text-base-content mb-1.5 text-2xl font-nunito">Signing in ....</h3>
           <p class="text-base-content/80">
             An activation link has been sent to your email address: hello@example.com. Please check your inbox and click
             on the link to complete the activation process.
@@ -60,4 +65,4 @@ const Verify_email = ()=>{
   )
 }
 
-export default Verify_email
+export default Callback
