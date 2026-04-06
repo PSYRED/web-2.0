@@ -73,7 +73,7 @@ export default function Login() {
       // Sign-up with e-mail verification
        
         const {data,error} = await supabase.auth.signUp({
-          email,password,
+          email,
           options :{
             emailRedirectTo:'https://psyred.com/auth/Callback'
           }
