@@ -2,22 +2,31 @@ import { useEffect } from "react"
 import { supabase } from "../lib/supabaseClient"
 import { useNavigate } from "react-router-dom"
 
-const Callback = ()=>{
+const Verify_email = ()=>{
   const navigate = useNavigate()
-  
-  useEffect(() => {
-  const handleAuth = async () => {
-    console.log("FULL URL:", window.location.href);
-   
-    const { data: sessionData } = await supabase.auth.getSession();
- 
-    if (sessionData.session) navigate("/dashboard/home");
-    else navigate("/auth/ErrorCallback");
-  };
 
-  handleAuth();
-}, [navigate]);
+   
+  const resendLink = async()=>{
+    const email = localStorage.getItem("auth_email");
+
+    if (!email){
+      navigate('/sign_up')
+    }
+    
+
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      emailRedirectTo: `${window.location.origin}/auth/callback`,
+    },
+  });
+
+   if (!error) {
+    alert("New link sent!");
+  }
+  }
   
+   
   
 
 return (
@@ -62,17 +71,22 @@ return (
       <div class="bg-base-100 bg-slate-900 font-nunito  shadow-base-300/20 z-1 w-full space-y-6 rounded-xl p-6 shadow-md sm:max-w-md lg:p-8">
         
         <div>
-          <h3 class="text-base-content mb-1.5 text-2xl font-nunito">Signing in ....</h3>
+          <h3 class="text-base-content mb-1.5 text-2xl font-nunito">We sent a verification email</h3>
           <p class="text-base-content/80">
             An activation link has been sent to your email address: hello@example.com. Please check your inbox and click
             on the link to complete the activation process.
           </p>
         </div>
         {/* <button class="btn btn-lg btn-primary btn-gradient btn-block">Skip for now</button> */}
-        <p class="text-base-content/80 text-center">
-          Didn't get the mail?
-          <a href="#" class="link link-animated link-primary font-normal">Resend</a>
-        </p>
+       <p className="text-base-content/80 text-center ">
+          Didn't get the email?</p>
+          <button
+            onClick={resendLink}
+            className="link link-primary rounded-md px-2 py-2 border-2 border-red-500 font-normal"
+          >
+            Resend
+          </button>
+
       </div>
     </div>
   </div>
@@ -81,4 +95,4 @@ return (
   )
 }
 
-export default Callback
+export default Verify_email

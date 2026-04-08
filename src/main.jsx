@@ -25,7 +25,8 @@ import Checkout from "./dashboard/Checkout.jsx";
 import Home from "./dashboard/Home.jsx";
 import { Studio } from "./dashboard/Studio.jsx";
 import Callback from "./auth/Callback.jsx";
-
+import ErrorCallback from "./auth/ErrorCallback.jsx";
+import Verify_email from "./pages/Verify_email.jsx";
   
 
   
@@ -73,7 +74,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
           <Route path="dashboard/Checkout" element={<Checkout/>} />
           <Route path="auth/Callback" element={<Callback/>}/>
-          
+          <Route path='auth/ErrorCallback' element={<ErrorCallback/>}/>
+          <Route path='pages/Verify_email' element={<Verify_email/>}/>
         </Route>
       </Routes>
     </AuthProvider>

@@ -12,7 +12,8 @@ import { useAuth } from "../auth/SupabaseContext";
 
 import google_svg from '../assets/psyred_assets/google_icon.svg'
 import { supabase } from "../lib/supabaseClient";
-export default function Login() {
+import facebook_svg from '../assets/psyred_assets/facebook.svg'
+ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -39,6 +40,17 @@ export default function Login() {
   if (error) console.error('Google login error:', error.message);
 }
 
+async function signInWithFacebook() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'facebook',
+    options: {
+      redirectTo: window.location.origin + 'auth/Callback', 
+    },
+  });
+
+  if (error) console.error('Facebook login error:', error.message);
+}
+
   
 
   const handleEmailSignUp= async (e) => {
@@ -49,7 +61,7 @@ export default function Login() {
    
     // Basic form validation
     if (!email.trim()) {
-      toast.error("Email and password are required.");
+      toast.error("Email");
       setIsLoading(false)
       return;
     }
@@ -75,9 +87,11 @@ export default function Login() {
         const {data,error} = await supabase.auth.signInWithOtp({
           email,
           options :{
-            emailRedirectTo:'https://psyred.com/auth/Callback'
+            emailRedirectTo:`${window.location.origin}/auth/Callback`
           }
-        })
+        });
+
+        localStorage.setItem('auth_email',email)
 
         console.log("SIGNUP RESPONSE:", data)
           
@@ -88,7 +102,7 @@ export default function Login() {
          } 
 
          toast.success('Signing in...')
-         navigate('/auth/Callback')
+         navigate('/pages/Verify_email')
         
       }
       catch (err) {
@@ -129,13 +143,14 @@ export default function Login() {
         <div className="relative h-screen">
 
         
-          <div className="absolute -z-20 inset-0  ">
+          <div className="absolute -z-20 inset-0   ">
             <img src={login} alt="" className="h-[100vh] w-[100vw] object-cover " />
           </div>
 
-          <div className="flex justify-center font-nunito  lg:justify-end lg:mr-[10rem]   items-center">
-            <div className=" flex flex-col   items-center  lg:pt-[4rem] ">
-              <div className="relative space-y-[-50rem]flex lg:w-full w-[100vw] bg-white   flex-col min-w-0   mb-6 shadow-lg rounded-lg  border-0">
+          <div className="flex font-nunito  h-full items-center justify-end  ">
+            
+            <div className=" flex flex-col  md:w-[40%]  ">
+              <div className="relative  lg:w-full w-[100vw] bg-white   flex-col min-w-0  shadow-lg rounded-lg  border-0">
                 <div className=" px-6 pt-4 space-y-">
                   <div className="items-center flex flex-col mb-3">
                     
@@ -163,7 +178,7 @@ export default function Login() {
                         onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
-                    <div className="relative w-full mb-3">
+                    {/* <div className="relative w-full mb-3"> */}
                       {/* <label
                         className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         htmlFor="grid-password"
@@ -176,7 +191,7 @@ export default function Login() {
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                       /> */}
-                    </div>
+                    {/* </div> */}
                     {/* <div>
                       <label className="inline-flex items-center cursor-pointer">
                         <input
@@ -229,29 +244,24 @@ export default function Login() {
                       </button>
                     </div>
 
+                    <div className="text-center mt-6">
+                      <button
+                        className="bg-cyan-700 flex items-center justify-center space-x-4 hover:bg-green-600 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                        type="button" onClick={signInWithFacebook}
+                      >
+                        <img src={facebook_svg} className="h-8" alt="" srcset="" />
+
+                        
+                      </button>
+                    </div>
+
+
                      
                     
                   </form>
                 </div>
               </div>
-              <div className="flex   space-x-[16rem] relative">
-                <div className="w-1/2 mb-[5rem]">
-                  <a
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    className="text-blueGray-200"
-                  >
-                    <small className="text-white">Forgot password?</small>
-                  </a>
-                </div>
-                <div className="w-1/2 text-right">
-                  <Link to="/register" className="text-blueGray-200">
-                    <small className="text-white ml-[5rem]">
-                      Create new account
-                    </small>
-                  </Link>
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
