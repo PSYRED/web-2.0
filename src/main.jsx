@@ -8,7 +8,7 @@ import Nav from "./components/Navbar/Nav.jsx";
 
 import About from "./pages/About.jsx"
 import Contact from "./pages/Contact.jsx";
-import Gallery from "./pages/Gallery.jsx";
+// import Gallery from "./pages/Gallery.jsx";
 import Careers from "./pages/Careers.jsx"
 import Product_one from "./pages/Product_one.jsx";
 import Product_two from "./pages/Product_two.jsx"; 
@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="about" element={<About />} />
           <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="gallery" element={<Gallery />} />
+          {/* <Route path="gallery" element={<Gallery />} /> */}
           <Route path="products" element={<Services />} />
           <Route path="products/product_one" element={<Product_one />} />
           <Route path="products/product_two" element={<Product_two />} />

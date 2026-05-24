@@ -1,8 +1,8 @@
 import React from 'react'
-import f150 from '../assets/psyred_assets/f150.png'
-import trucks from "../assets/psyred_assets/shot4.png";
-import ram_1500 from "../assets/psyred_assets/RAM1500.png";
-import ram12 from "../assets/psyred_assets/RAM12.png";
+import f150 from '../assets/brp1_header.png?format=webp&quality=80'
+import trucks from "../assets/brp1_1.png?format=webp&quality=80";
+import ram_1500 from "../assets/brp1_left.png?format=webp&quality=80";
+import ram12 from "../assets/brp1_back.png?format=webp&quality=80";
 
 
 const Product_one = () => {

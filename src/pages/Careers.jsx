@@ -1,15 +1,4 @@
-import truck from "../assets/truck.jpg";
-import ship from "../assets/ship.jpg";
-import plane from "../assets/plane.jpg";
-import { IoIosTimer } from "react-icons/io";
-import { RiGlobalLine } from "react-icons/ri";
-import { MdDeliveryDining } from "react-icons/md";
-import customs from "../assets/customs.jpg";
-import warehouse from "../assets/warehouse.jpg";
-import pack from "../assets/package.jpg";
-import { IoCheckbox } from "react-icons/io5";
-import { FaTruck } from "react-icons/fa";
-import { FaHandHolding } from "react-icons/fa";
+  
 import Accordion2 from "../components/Accordion2/Accordion2";
 
 const Careers = () => {

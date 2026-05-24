@@ -1,16 +1,9 @@
-import { RiGlobalLine } from "react-icons/ri";
-import { IoIosTimer } from "react-icons/io";
+ 
 import { FaLightbulb } from "react-icons/fa";
-import { FaUser } from "react-icons/fa";
-import { MdDeliveryDining } from "react-icons/md";
-import { Carousel } from "react-responsive-carousel";
-import ship2 from "../assets/ship2.jpg";
-import air from "../assets/air.jpg";
-import trucks from "../assets/trucks.jpg";
-import Card from "../components/Card/Card";
+  
 import Header from "../sections/OurServices/Header";
 import CardNoBtn from "../components/Card/CardNoBtn";
-import paul from './../assets/paul.jpg'
+
 import { CiSettings } from "react-icons/ci";
 import { FaShieldAlt } from "react-icons/fa";
 import headerImg from '../assets/10003.jpg?format=webp&quality=80'
