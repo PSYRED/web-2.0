@@ -43,7 +43,7 @@ const Form = () => {
   return (
     <>
       <ToastContainer />
-      <div className="lg:pb-8 text-white   mb-32  lg:mb-[-5rem]   relative font-nunito  ">
+      <div className="lg:pb-8 text-white bg-black   mb-32  lg:mb-[-5rem]   relative font-nunito  ">
         <div className="bg-image-2   " />
         <div className="lg:mt-4 top-1  text-white   lg:pb-12 bg-slate-900 rounded-xl  flex flex-col md:flex-row absolute lg:w-[50%] md:w-[75%]     lg:top-[1rem] md:left-[8rem] md:top-[55rem] py-[2rem] md:pb-[10rem] pb-[0rem] w-full">
           <form className="flex flex-col text-white px-8  md:w-2/3 space-y-10   ">

@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <>
       {/* header image */}
-      <div className="backgroundImage -z-10 bg-cover bg-bottom relative bg-blue-600 " style={{backgroundImage:`url(${headerImg})`}}>
+      <div className="backgroundImage -z-10 bg-cover bg-bottom relative bg-black"  >
         <div className="bg-e-global-color-1046ecd transition-all -z-20 duration-300 overlay" />
         <div className="lg:pt-52 pt-34  ">
           <div className=" w-3/4 h-72 mx-auto align-center pt-24 text-center  ">
@@ -28,7 +28,7 @@ const Contact = () => {
         </div>
       </div>
       {/* header text  */}
-      <div className=" w-full font-nunito pb-24 pt-[4rem] px-8 bg-slate-100 bg-gradient-to-b from-white">
+      <div className=" w-full font-nunito pb-24 pt-[4rem] px-8 bg-slate-600 bg-gradient-to-b from-white">
         <div className="md:flex justify-evenly   ">
           <div className="  lg:w-1/2 p-6   ">
             <h1 className="uppercase lg:text-4xl text-2xl font-semibold">
@@ -125,7 +125,7 @@ const Contact = () => {
       {/* embedded map  */}
       <div className="">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15949.846923851153!2d30.107238399999996!3d-1.9693568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1722002073419!5m2!1sen!2srw"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2894.8188226548036!2d-70.46736932434987!3d43.485251271110656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb2a501590263b5%3A0xb1cc409c19ae3081!2s281%20Alfred%20St%2C%20Biddeford%2C%20ME%2004005%2C%20USA!5e0!3m2!1sen!2srw!4v1780307170584!5m2!1sen!2srw"
           width="w-full"
           height="450"
           className="w-full"
@@ -133,6 +133,8 @@ const Contact = () => {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>  
+
+        
       </div>
     </>
   );
