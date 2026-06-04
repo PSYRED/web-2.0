@@ -33,9 +33,10 @@ import facebook_svg from '../assets/psyred_assets/facebook.svg'
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin + 'auth/Callback', 
+      redirectTo: `${window.location.origin}/auth/Callback`, 
     },
   });
+    console.log(`googleCallback :${window.location.origin}`)
 
   if (error) console.error('Google login error:', error.message);
 }
@@ -44,7 +45,7 @@ async function signInWithFacebook() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'facebook',
     options: {
-      redirectTo: window.location.origin + 'auth/Callback', 
+      redirectTo: `${window.location.origin}/auth/Callback`, 
     },
   });
 

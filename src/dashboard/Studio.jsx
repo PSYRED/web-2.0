@@ -1,151 +1,179 @@
-import React from 'react'
-import { useEffect,useState} from 'react';
-import {useLocation} from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-
+import React, { useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { supabase } from "../lib/supabaseClient";
 
 export const Studio = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-const location = useLocation()
- const navigate = useNavigate(); 
+  const [brand] = useState(location.state?.brand || "Toyota");
+  const [products, setProducts] = useState([]);
 
-const [brp,setBrp] = useState('')
-const [color,setColor] = useState('Artic armor')
-const [brand,setBrand] = useState(location.state?.brand ||'Toyota')
-const [model,setModel] = useState('')
+  const [selectedModel, setSelectedModel] = useState("");
 
+  const [selectedBed, setSelectedBed] = useState("");
+   
 
-  const brandData = {
-  Toyota: {},
-  RAM: {
-    models: {
-      '1500': ['BRP I Sports', 'BRP II'],
-      '2500': ['Utility Rack']
+  // 1. Fetch products once
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await supabase
+        .from("products")
+        .select("*")
+        .eq("car_brand", brand);
+
+      setProducts(data || []);
+    };
+
+    fetchProducts();
+  }, [brand]);
+
+  useEffect(()=> {
+    console.log("Raw_productArray:",products)
+    
+    
+  },[products])
+
+  // 2. Get unique models
+  const models = useMemo(() => {
+    const unique = [...new Set(products.map(p => p.car_model))];
+    return unique;
+  }, [products]);
+
+  // 3. Set defaults safely
+  useEffect(() => {
+    if (models.length && !selectedModel) {
+      setSelectedModel(models[0]);
     }
-  },
-  Rivian: {},
-  Chevrolet : {}
-};
-  const getImagePath = (view= 'top') => {
-  let path = `/imgclone/STUDIO/${brand}/`
-  
-  if (model) {
-    path += `${model}/`;
+  }, [models]);
+
+  // 4. Filter selected model products
+  const modelProducts = useMemo(() => {
+    return products.filter(p => p.car_model === selectedModel);
+  }, [products, selectedModel]);
+
+  // 5. Bed sizes
+  const bedSizes = useMemo(() => {
+    return [...new Set(modelProducts.map(p => p.bed_size))];
+  }, [modelProducts]);
+
+  useEffect(() => {
+    if (bedSizes.length && !selectedBed) {
+      setSelectedBed(bedSizes[0]);
+    }
+  }, [bedSizes]);
+
+  // 6. Selected product
+  const selectedProduct = useMemo(() => {
+    return modelProducts.find(
+      p => p.bed_size === selectedBed
+    );
+  }, [modelProducts, selectedBed]);
+
+  // 7. Images from Supabase Storage
+  const images = useMemo(() => {
+    if (!selectedProduct?.image_id) return [];
+
+    return selectedProduct.image_id.map(path =>
+      supabase.storage
+        .from("BRP/BRP/Standard")
+        .getPublicUrl(path)
+        .data.publicUrl
+    );
+  }, [selectedProduct]);
+
+  useEffect(()=>{
+    console.log("IMAGE ARRAY",images)
+  ,[images]})
+
+  useEffect(() => {
+  if (modelProducts.length) {
+    setSelectedBed(modelProducts[0].bed_size);
   }
+}, [selectedModel]);
 
-  path += `${color}/`;
+  if (!selectedProduct) return <div className="text-white p-10">Loading...</div>;
 
-  if (brp) {
-    path += `${brp}/`
-  }
-  
-  path += `${view}.png`
-
-  return path
-}
-
-
- 
- useEffect (() => {
-    if (color && brand) {
-      const imgPath = getImagePath()
-      console.log(imgPath)
-     }
-  }, [color, brand,brp,model])
-
-  
-
+  const logoPath = `/imgclone/LOGOS/${brand.toLowerCase()}.svg`;
 
   return (
-    <div>
-      
-      <div className='flex  items-center bg-black py-[12rem] px-[5rem]'>
-        <div className="text-4xl font-bold text-white w-1/2">
-         <div>
-            <img src={getImagePath('top')}/>
+    <div className="min-h-screen flex justify-center items-center bg-gradient-to-bl from-black via-red-900 to-slate-900 bg-black text-white p-10">
 
-         </div>
-         <div className='flex'>
-          <div className='w-1/3'>
-          <img src={getImagePath('left')}/>
+      <div className="w-[70%] items-center bg-black border rounded-xl p-6 flex gap-6">
 
-         </div>
-         <div className='w-1/3'>
-          <img src={getImagePath('right')}/>
-
-         </div>
-         <div className='w-1/3'>
-          <img src={getImagePath('far')}/>
-
-         </div>
-         
-         </div>
-          
-          
-          
+        {/* IMAGE */}
+        <div className="w-1/2">
+          <img
+            src={images[0]}
+            className="w-full rounded-lg"
+          />
         </div>
-        <div className='w-1/2 text-center flex flex-col items-center space-y-2 '>
-          
-           
-          
-          <div className=''>Model</div>
 
-          
-{/* 
-          <select name="brand"  className='rounded-md' id="">
-            <option value="" disabled selected hidden>Select Brand</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Ford">Ford</option>
-            <option value="GMC">GMC</option>
-          </select> */}
-
-          <div>BRP Color</div>
-
-           <select name="color" onChange={(e)=> setColor(e.target.value)}  className='rounded-md' id="">
-            <option value="" disabled selected hidden>Select BRP color</option>
-            <option value="Artic armor">White</option>
-            <option value="Blackhawk armor">Black</option>
-            <option value="Silver-trail armor">Grey</option>
-          </select>
-
-     
-
-          <select value={model} disabled={!brand || Object.keys(brandData[brand]?.models || {}).length === 0 } onChange={(e)=> setModel(e.target.value)}
-          className='rounded-md' id="">
-            
-            <option value="" disabled selected hidden>Select Model</option>
-
-            {Object.keys(brandData[brand]?.models || {}).map((m)=> (
-              <option key={m} value={m}>{m}</option>
-
-            ))}
-            
-          </select>
-          
-          <div>BRP types</div>
-           <select value={brp} disabled={!model ||(brandData?.[brand]?.models?.[model] || []).length === 0}   name="brp" onChange={(e)=> setBrp(e.target.value)}  className='rounded-md' id=""> 
-            <option value="" disabled selected hidden>Select BRP Type</option>
-
-            {(brandData?.[brand]?.models?.[model] || []).map((k)=> (
-              <option key={k} value={k}>{k}</option>
-
-            ))}
-          </select>
-
- 
-           
-          <div className=' pt-6'>
-
-            <button 
-              onClick={()=>navigate('/dashboard/checkout')}
-            className="px-6 py-3  bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:bg-green-700 transition-colors transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-        >
-            Proceed to Checkout
-        </button>
+        {/* CONFIG */}
+        <div className="w-1/2 flex flex-col gap-4">
+          <div>
+            <img src={logoPath} alt="" srcset="" />
           </div>
+          {/* MODEL */}
+          <select
+            className="bg-black border rounded p-2"
+            value={selectedModel}
+            onChange={(e) => setSelectedModel(e.target.value)}
+          >
+            {models.map(m => (
+              <option key={m} value={m}>
+                {m}
+              </option>
+            ))}
+          </select>
+
+          {/* BED SIZE */}
+          <select
+            className="bg-black border rounded p-2"
+            value={selectedBed}
+            onChange={(e) => setSelectedBed(e.target.value)}
+          >
+            {bedSizes.map(b => (
+              <option key={b} value={b}>
+                {b} ft
+              </option>
+            ))}
+          </select>
+
+          {/* INFO */}
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold">
+              {selectedProduct.car_model}
+            </h2>
+
+            <p>{selectedProduct.storage_mode}</p>
+
+            <p className="text-lg font-semibold">
+              ${selectedProduct.base_price}
+            </p>
+          </div>
+
+          {/* NEXT */}
+          <button
+            onClick={() =>
+              navigate("/dashboard/cart", {
+                state: {
+                  brand,
+                  model: selectedProduct.car_model,
+                  bedLength: selectedProduct.bed_size,
+                  mod: selectedProduct.storage_mode,
+                  price: selectedProduct.base_price,
+                  image: images[0],
+                },
+              })
+            }
+            className="bg-green-600 py-2 rounded"
+          >
+            Next
+          </button>
 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
